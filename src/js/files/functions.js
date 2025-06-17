@@ -425,9 +425,14 @@ export function tabs() {
 
 //#region Модуль работы с меню (бургер) =======================================================================================================================================================================================================================
 export function menuInit() {
-	if (document.querySelector(".icon-menu")) {
+	if (document.querySelector(".js-mobile-menu") && document.querySelector(".js-close-mobile-menu")) {
 		document.addEventListener("click", function (e) {
-			if (bodyLockStatus && e.target.closest('.icon-menu')) {
+			if (bodyLockStatus && e.target.closest('.js-mobile-menu')) {
+				bodyLockToggle();
+				document.documentElement.classList.toggle("menu-open");
+			}
+			console.log(bodyLockStatus);
+			if (e.target.closest('.js-close-mobile-menu')) {
 				bodyLockToggle();
 				document.documentElement.classList.toggle("menu-open");
 			}

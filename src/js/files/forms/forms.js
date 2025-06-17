@@ -23,12 +23,17 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 		});
 	}
 
-	const inputs = document.querySelectorAll('.form__input,.form__txt');
+	const inputs = document.querySelectorAll('.form__input,.form__txt,.live-search__input');
 	inputs.forEach(input => {
 		if (input.value.length > 0) {
 			input.classList.add('_form-focus');
 			input.parentElement.classList.add('_form-focus');
-			if (input.parentElement.querySelector('.form__clear-svg')) input.parentElement.querySelector('.form__clear-svg').classList.add('_active');
+
+			const inputClearButton = input.parentElement.querySelector('.form__clear-svg') || input.parentElement.querySelector('.js-clear-input');
+
+			if (inputClearButton !== null) {
+				inputClearButton.classList.add('_active');
+			}
 		}
 	})
 
@@ -38,10 +43,16 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 			if (targetElement.dataset.placeholder) {
 				targetElement.placeholder = '';
 			}
+
 			if (!targetElement.hasAttribute('data-no-focus-classes')) {
 				targetElement.classList.add('_form-focus');
 				targetElement.parentElement.classList.add('_form-focus');
-				if (targetElement.parentElement.querySelector('.form__clear-svg')) targetElement.parentElement.querySelector('.form__clear-svg').classList.add('_active');
+
+				const inputClearButton = targetElement.parentElement.querySelector('.form__clear-svg') || targetElement.parentElement.querySelector('.js-clear-input');
+
+				if (inputClearButton !== null) {
+					inputClearButton.classList.add('_active');
+				}
 			}
 		}
 	});
@@ -55,8 +66,12 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 				targetElement.classList.add('_form-focus');
 				targetElement.parentElement.classList.add('_form-focus');
 
-				if (e.target.value.length > 0) {
-					if (targetElement.parentElement.querySelector('.form__clear-svg')) targetElement.parentElement.querySelector('.form__clear-svg').classList.add('_active');
+				if (targetElement.value.length > 0) {
+					const inputClearButton = targetElement.parentElement.querySelector('.form__clear-svg') || targetElement.parentElement.querySelector('.js-clear-input');
+
+					if (inputClearButton !== null) {
+						inputClearButton.classList.add('_active');
+					}
 				}
 
 			}

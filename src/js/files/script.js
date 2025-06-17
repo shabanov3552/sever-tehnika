@@ -18,6 +18,7 @@ document.addEventListener("click", function (e) {
          document.removeEventListener("mouseover", sidebarCatalogActions);
       }
    }
+
    // закрыть модалку каталога
    if (e.target.closest('.js-sidebar-catalog-close')) {
       bodyLockToggle();
@@ -27,25 +28,36 @@ document.addEventListener("click", function (e) {
       bodyLockToggle();
       document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
    }
+
    // очистка input по клику на крестик
-   if (e.target.closest('.form__clear-svg')) {
-      let input = e.target.closest('.form__line').querySelector('.form__input') || e.target.closest('.form__line').querySelector('.form__txt');
+   if (e.target.closest('.form__clear-svg') || e.target.closest('.js-clear-input')) {
+      let line = e.target.closest('.form__line') || e.target.closest('.live-search__line');
+      let input =
+         line.querySelector('.form__input') ||
+         line.querySelector('.form__txt') ||
+         line.querySelector('.live-search__input');
+      let clearButton = line.querySelector('.form__clear-svg') || line.querySelector('.js-clear-input');
+
+
       input.value = '';
       input.classList.remove('_form-focus');
       input.parentElement.classList.remove('_form-focus');
-      e.target.closest('.form__clear-svg').classList.remove('_active');
+      clearButton.classList.remove('_active');
       // Inputmask.remove(input);
       // input.style.height = `auto`;
    }
+
    // автовысота для textarea
    if (e.target.closest('textarea')) {
       txtarAutoHeight(e.target)
    }
+
    // спрятать/показать input в личкабе
    if (e.target.closest('.personal-data__change')) {
       changeData(e.target)
       e.preventDefault()
    }
+
    // смена текста кнопки в личкабе
    if (e.target.closest('.order__more-btn')) {
       let target = e.target.closest('.order__more-btn')

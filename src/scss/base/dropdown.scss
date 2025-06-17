@@ -1,13 +1,18 @@
 .dropdown {
    position: relative;
    z-index: 5;
+
+   &._dd-active {
+      z-index: 6;
+   }
+
    // .dropdown__button
 
    &__button {
       position: relative;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 4px;
 
       &:after {
          content: "";

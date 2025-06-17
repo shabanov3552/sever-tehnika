@@ -1,6 +1,8 @@
 @use "sass:math" as math;
-@use './variables.scss' as var;
-@use './functions.scss' as func;
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
 
 // Стили тега BODY
 body {
@@ -57,6 +59,14 @@ body {
       @if (var.$containerPadding>0) {
          @if (var.$maxWidthContainer>0) {
             padding: 0 func.rem(math.div(var.$containerPadding, 2));
+
+            @media (max-width:bp.$md) {
+               padding: func.rem(0) func.rem(20);
+            }
+
+            @media (max-width:bp.$xs) {
+               padding: func.rem(0) func.rem(10);
+            }
          }
 
          @else {
