@@ -58,3 +58,133 @@
       top: 100px;
    }
 }
+
+//========================================================================================================================================================
+.page {
+   padding-top: func.rem(50);
+
+   @media (max-width:bp.$md) {
+      padding-top: 0;
+   }
+}
+
+.page-title {
+   font-weight: 500;
+   font-size: 36px;
+   color: #000;
+   margin-bottom: func.rem(40);
+
+   @media (max-width:bp.$md) {
+      font-size: 26px;
+   }
+}
+
+.button-blue {
+   border-radius: 5px;
+   background: var(--blue);
+   display: inline-block;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 112%;
+   text-align: center;
+   color: #fff;
+   padding: func.rem(13.5) func.rem(40.5);
+
+   @media (any-hover: hover) {
+      &:hover {
+         background: var(--blue-active);
+      }
+   }
+
+   // ._active
+
+   &._active {
+      background: var(--blue-active);
+
+      @media (any-hover: hover) {
+         &:hover {
+            background: var(--blue);
+         }
+      }
+   }
+}
+
+.button-transparent-black {
+   border-radius: 10px;
+   color: #000;
+   padding: func.rem(13.5) func.rem(29.74);
+   border: 1px solid #000;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 112%;
+   text-align: center;
+   color: #000;
+
+   @media (any-hover: hover) {
+      &:hover {
+         background: #000;
+         color: #fff;
+      }
+   }
+}
+
+.button-transparent-white {
+   font-weight: 500;
+   font-size: 17px;
+   text-transform: uppercase;
+   color: #fff;
+   display: inline-flex;
+   align-items: center;
+   gap: 17px;
+   border: 2px solid #fff;
+   border-radius: 44px;
+   padding: func.rem(14);
+   padding-left: func.rem(20);
+
+   @media (any-hover: hover) {
+      &:hover {
+         background: #000;
+      }
+   }
+
+   &.no-label {
+      width: 48px;
+      height: 48px;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      padding: 0;
+   }
+}
+
+.button-grey {
+   border-radius: 25px;
+   background: rgba(127, 127, 127, 0.1);
+   padding: func.rem(14.5) func.rem(29.8);
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 112%;
+   text-align: center;
+   color: #000;
+
+   @media (any-hover: hover) {
+      &:hover {
+         background: rgba(127, 127, 127, 0.3);
+      }
+   }
+}
+
+.product-status {
+   font-weight: 400;
+   font-size: 16px;
+   color: var(--green);
+   display: inline-flex;
+   gap: 8px;
+   align-items: center;
+
+   img {
+      width: 16px;
+      height: 13px;
+      flex-shrink: 0;
+   }
+}

@@ -11,6 +11,7 @@
 // Спойлер
 .spollers__item {
 	font-size: func.rem(20);
+	border: 1px solid #b4b0ad;
 }
 
 // Заголовок спойлера
@@ -18,86 +19,48 @@
 	width: 100%;
 	cursor: default;
 	text-align: left;
-	border: 1px solid #eee;
-	padding: func.rem(10) func.rem(15);
-	border-radius: func.rem(5);
+	padding: func.rem(25) func.rem(30);
 	position: relative;
 	list-style: none;
+	font-weight: 500;
+	font-size: 20px;
+	color: #000;
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	align-items: center;
 
 	&::marker {}
 
 	._spoller-init & {
 		cursor: pointer;
 
-		&::before,
 		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
-		}
-
-		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
-
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
+			content: '';
+			width: 32px;
+			height: 32px;
+			flex-shrink: 0;
+			display: block;
+			background: url(../img/icons/icon_spoller.svg);
+			transition: all 0.3s ease 0s;
 		}
 
 		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
-			}
-
 			&::after {
-				transform: rotate(40deg);
+				transform: rotate(45deg);
 			}
 		}
-
-		/*
-		._spoller-init & {
-			position: relative;
-			width: 100%;
-			text-align: left;
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				right: 0;
-				top: func.rem(12);
-				height: func.rem(1);
-				transition: all 0.3s ease 0s;
-				width: func.rem(10);
-				background-color: #000;
-			}
-			&::before {
-				transform: rotate(40deg);
-				right: func.rem(7);
-			}
-			&::after {
-				transform: rotate(-40deg);
-			}
-		}
-		&._spoller-active {
-			&::before {
-				transform: rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		*/
 	}
 }
 
 // Контент спойлера
 .spollers__body {
-	padding: func.rem(20);
-	border-radius: func.rem(5);
-	border: 1px solid #eee;
+	margin-top: func.rem(-8);
+	padding-left: func.rem(65);
+	padding-right: func.rem(121);
+	padding-bottom: func.rem(52);
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 150%;
+	color: #000;
 }

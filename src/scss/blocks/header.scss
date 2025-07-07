@@ -3,6 +3,7 @@
 @use '../config/functions' as func;
 
 //====================================================================================================
+
 .header {
 	padding-top: func.rem(19);
 	padding-bottom: func.rem(28);
@@ -41,11 +42,13 @@
 			visibility: hidden;
 			top: -100px;
 			transition: all 0.3s ease 0s;
+			pointer-events: none;
 
 			.menu-open & {
 				opacity: 1;
 				visibility: visible;
 				top: 0;
+				pointer-events: all;
 			}
 		}
 	}
@@ -68,6 +71,7 @@
 	&__bottom-panel {
 		display: grid;
 		grid-template-columns: 316px 1fr auto;
+		position: relative;
 
 		@media (max-width:bp.$lg) {
 			grid-template-columns: repeat(2, 1fr);
@@ -144,7 +148,7 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				color: #0465ba;
+				color: var(--blue);
 			}
 		}
 	}
@@ -197,7 +201,7 @@
 		}
 
 		&:hover {
-			color: #0465ba;
+			color: var(--blue);
 		}
 	}
 
@@ -284,7 +288,7 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				color: #0465ba;
+				color: var(--blue);
 			}
 		}
 	}
@@ -292,7 +296,7 @@
 	// .header__main-actions
 
 	&__main-actions {
-		background: #0465ba;
+		background: var(--blue);
 		padding: func.rem(10) func.rem(13) func.rem(10) func.rem(20);
 		border-radius: 10px;
 		display: grid;
@@ -451,7 +455,7 @@
 		right: 2px;
 		border-radius: 50%;
 		padding: func.rem(3.3) func.rem(6.6) func.rem(3.7) func.rem(6.6);
-		background: #cf1235;
+		background: var(--red);
 		font-family: var(--second-family);
 		font-weight: 600;
 		font-size: 15px;
@@ -467,126 +471,4 @@
 	}
 }
 
-.live-search {
-
-	// .live-search__line
-
-	&__line {
-		position: relative;
-	}
-
-	// .live-search__label
-
-	&__label {
-		position: absolute;
-		left: 24px;
-		top: 50%;
-		transform: translateY(-50%);
-		font-weight: 300;
-		font-size: 18px;
-		color: #8a8a8a;
-		pointer-events: none;
-
-		._form-focus & {
-			display: none;
-		}
-	}
-
-	// .live-search__input
-
-	&__input {
-		background: #ededed;
-		border-radius: 10px;
-		height: 64px;
-		width: 100%;
-		padding-left: func.rem(24);
-		padding-right: func.rem(84);
-	}
-
-	// .live-search__clear-icon
-
-	&__clear-icon {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 29px;
-		width: 24px;
-		height: 24px;
-		display: none;
-
-		&._active {
-			display: block;
-
-			&~.live-search__icon {
-				display: none;
-			}
-		}
-	}
-
-	// .live-search__icon
-
-	&__icon {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 27px;
-		width: 29px;
-		height: 28px;
-		pointer-events: none;
-	}
-}
-
 //====================================================================================================
-
-//Burger
-/*
-.icon-menu {
-	display: none;
-	@media (max-width: bp.$md) {
-		display: block;
-		position: relative;
-		width: func.rem(30);
-		height: func.rem(18);
-		z-index: 5;
-		@media (any-hover: none) {
-			cursor: default;
-		}
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: func.rem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - func.rem(1));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - func.rem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - func.rem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
-}
-*/

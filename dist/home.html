@@ -6,13 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250617214121">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250707151955">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&_v=20250617214121" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&_v=20250707151955" rel="stylesheet">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 				<div class="header__top-panel">
 					<nav class="header__info-nav">
 						<div class="header__dropdown dropdown" data-dropdown>
-							<a href="" class="header__dropdown-button dropdown__button" data-dropdown-button>Покупателям</a>
+							<button type="button" class="header__dropdown-button dropdown__button" data-dropdown-button>Покупателям</button>
 							<div class="header__dropdown-block dropdown__block">
 								<div class="header__dropdown-links dropdown__links">
 									<a href="" class="header__link dropdown__link">Ссылка</a>
@@ -32,7 +32,7 @@
 							</div>
 						</div>
 						<div class="header__dropdown dropdown" data-dropdown>
-							<a href="" class="header__dropdown-button dropdown__button" data-dropdown-button>О компании</a>
+							<button type="button" class="header__dropdown-button dropdown__button" data-dropdown-button>О компании</button>
 							<div class="header__dropdown-block dropdown__block">
 								<div class="header__dropdown-links dropdown__links">
 									<a href="" class="header__link dropdown__link">О нас</a>
@@ -66,7 +66,7 @@
 				<div class="header__bottom-panel">
 					<div class="header__main-actions">
 						<a href="" class="header__logo"><img src="img/logo.svg" alt=""></a>
-						<button type="button" class="header__catalog-button">
+						<button type="button" class="header__catalog-button js-catalog-menu-open">
 							<span>Каталог</span>
 							<img src="img/icons/arrow-catalog-button.svg" alt="">
 						</button>
@@ -75,18 +75,82 @@
 					<button type="button" class="header__mobile-menu-button js-mobile-menu"><img src="img/icons/icon_burger.svg" alt=""></button>
 
 					<div class="header__search">
-						<div class="live-search">
+						<div class="live-search" data-da=".live-search-container, 991.98">
 							<div class="live-search__line">
 								<label for="" class="live-search__label">Поиск по сайту</label>
 								<input id="" type="text" name="" class="live-search__input">
 								<button type="button" class="live-search__clear-icon js-clear-input"><img src="img/icons/icon_search-clear.svg" alt=""></button>
 								<div class="live-search__icon"><img src="img/icons/icon_search.svg" alt=""></div>
 							</div>
+							<div class="live-search-result">
+								<div class="live-search-result__list">
+									<a href="" class="live-search-result__link">Свечи зажигания</a>
+									<a href="" class="live-search-result__link">Свечи зажигания</a>
+									<a href="" class="live-search-result__link">Свечи зажигания</a>
+									<div class="live-search-result__card">
+										<div class="live-search-result__card-ibg live-search-result__card-ibg_contain"><img src="img/product-image-1.webp" alt=""></div>
+										<div class="live-search-result__card-main">
+											<a href="" class="live-search-result__name">Свеча NGK BPR7НS-10</a>
+											<div class="live-search-result__price">520 <span>₽</span></div>
+										</div>
+									</div>
+									<div class="live-search-result__card">
+										<div class="live-search-result__card-ibg live-search-result__card-ibg_contain"><img src="img/product-image-2.webp" alt=""></div>
+										<div class="live-search-result__card-main">
+											<a href="" class="live-search-result__name">Свеча NGK BR9EYA /Arctic Cat BEARCAT 570XT/M8/800/8000/1000</a>
+											<div class="live-search-result__price">520 <span>₽</span></div>
+										</div>
+									</div>
+									<div class="live-search-result__card">
+										<div class="live-search-result__card-ibg live-search-result__card-ibg_contain"><img src="img/product-card-4.webp" alt=""></div>
+										<div class="live-search-result__card-main">
+											<a href="" class="live-search-result__name">Свеча NGK B7НS</a>
+											<div class="live-search-result__price">520 <span>₽</span></div>
+										</div>
+									</div>
+									<div class="live-search-result__card">
+										<div class="live-search-result__card-ibg live-search-result__card-ibg_contain"><img src="img/product-image-1.webp" alt=""></div>
+										<div class="live-search-result__card-main">
+											<a href="" class="live-search-result__name">Свеча NGK BR9ECS /Ski Doo P-TEK</a>
+											<div class="live-search-result__price">520 <span>₽</span></div>
+										</div>
+									</div>
+									<div class="live-search-result__card">
+										<div class="live-search-result__card-ibg live-search-result__card-ibg_contain"><img src="img/product-image-1.webp" alt=""></div>
+										<div class="live-search-result__card-main">
+											<a href="" class="live-search-result__name">Свеча NGK DCPR8E /Ski-Doo/Lynx/Can-Am, СФ X8</a>
+											<div class="live-search-result__price">520 <span>₽</span></div>
+										</div>
+									</div>
+									<div class="live-search-result__card">
+										<div class="live-search-result__card-ibg live-search-result__card-ibg_contain"><img src="img/product-card-4.webp" alt=""></div>
+										<div class="live-search-result__card-main">
+											<a href="" class="live-search-result__name">Свеча NGK B7НS</a>
+											<div class="live-search-result__price">520 <span>₽</span></div>
+										</div>
+									</div>
+									<div class="live-search-result__card">
+										<div class="live-search-result__card-ibg live-search-result__card-ibg_contain"><img src="img/product-image-1.webp" alt=""></div>
+										<div class="live-search-result__card-main">
+											<a href="" class="live-search-result__name">Свеча NGK BR9ECS /Ski Doo P-TEK</a>
+											<div class="live-search-result__price">520 <span>₽</span></div>
+										</div>
+									</div>
+									<div class="live-search-result__card">
+										<div class="live-search-result__card-ibg live-search-result__card-ibg_contain"><img src="img/product-image-1.webp" alt=""></div>
+										<div class="live-search-result__card-main">
+											<a href="" class="live-search-result__name">Свеча NGK DCPR8E /Ski-Doo/Lynx/Can-Am, СФ X8</a>
+											<div class="live-search-result__price">520 <span>₽</span></div>
+										</div>
+									</div>
+								</div>
+								<a href="" class="live-search-result__button button-transparent-black">Показать все</a>
+							</div>
 						</div>
 					</div>
 
 					<div class="header__user-actions">
-						<a href="" class="header__action-link header__action-link_search">
+						<a href="" class="header__action-link header__action-link_search" data-popup="#live-search">
 							<img src="img/icons/icon_search.svg" alt="">
 						</a>
 						<a href="" class="header__action-link">
@@ -104,19 +168,1143 @@
 							<span class="header__action-link-label">Войти</span>
 						</a>
 					</div>
+					<div class="catalog-menu">
+						<div class="catalog-menu__wrapper">
+							<div class="catalog-menu__header">
+								<div class="catalog-menu__mobile-title">Каталог</div>
+								<button type="submit" class="catalog-menu__back-button js-catalog-menu-back"><img src="img/icons/arrow-back.svg" alt=""></button>
+								<button type="button" class="catalog-menu__close-button js-catalog-menu-close"><img src="img/icons/icon_close-modal.svg" alt=""></button>
+							</div>
+							<div class="catalog-menu__grid">
+								<div class="catalog-menu__list">
+									<a href="" class="catalog-menu__item" data-catalog-menu-item="1">
+										<span class="catalog-menu__item-name">Квадроциклы ATV</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item" data-catalog-menu-item="qwe">
+										<span class="catalog-menu__item-name">Снегоходная техника, з/ч</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item" data-catalog-menu-item="2">
+										<span class="catalog-menu__item-name">Водно-моторная техника, з/ч</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item" data-catalog-menu-item="zxc">
+										<span class="catalog-menu__item-name">Карабины и блоки</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item">
+										<span class="catalog-menu__item-name">Аккумуляторы</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item">
+										<span class="catalog-menu__item-name">Автозапчасти</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item">
+										<span class="catalog-menu__item-name">Туристические товары</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item">
+										<span class="catalog-menu__item-name">Одежда и снаряжение</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item">
+										<span class="catalog-menu__item-name">Лебедки</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item">
+										<span class="catalog-menu__item-name">Подшипники</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item">
+										<span class="catalog-menu__item-name">Мотобуксировщикии запчасти</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item">
+										<span class="catalog-menu__item-name">Свечи зажигания</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__item">
+										<span class="catalog-menu__item-name">Масла и смазки</span>
+										<svg class="catalog-menu__item-arrow">
+											<use xlink:href="img/icons/icons.svg#arrow-catalog-menu"></use>
+										</svg>
+									</a>
+								</div>
+								<div class="catalog-menu__sublist">
+									<div class="catalog-menu__section" data-catalog-menu-section="1">
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Запчасти ATV</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Запчасти ATV RM</a>
+												<a href="" class="catalog-menu__link">Запчасти ATV СТЕЛС</a>
+												<a href="" class="catalog-menu__link">Запчасти ATV разное</a>
+												<a href="" class="catalog-menu__link">Фары, фонари ATV</a>
+											</div>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Амортизаторы ATV</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Амортизаторы ATV RUSAM</a>
+												<a href="" class="catalog-menu__link">Амортизаторы ATV SS-20</a>
+											</div>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Запчасти ATV Китай</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Электрооборудование ATV</a>
+												<a href="" class="catalog-menu__link">Ходовая часть ATV</a>
+												<a href="" class="catalog-menu__link">Трансмиссия ATV</a>
+												<a href="" class="catalog-menu__link">Тормозная система ATV</a>
+												<a href="" class="catalog-menu__link">Система охлаждения ATV</a>
+												<a href="" class="catalog-menu__link">Рулевое управление (детали руля) ATV</a>
+												<a href="" class="catalog-menu__link">Двигатель ATV</a>
+												<a href="" class="catalog-menu__link">Внешние световые приборы ATV</a>
+												<a href="" class="catalog-menu__link">Аксессуары</a>
+											</div>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Фильтры ATV</a>
+											<a href="" class="catalog-menu__title-link">Подшипники ATV</a>
+											<a href="" class="catalog-menu__title-link">Колодки тормозные ATV</a>
+											<a href="" class="catalog-menu__title-link">Кофры, сумки и чехлы ATV</a>
+										</div>
+									</div>
+									<div class="catalog-menu__section" data-catalog-menu-section="qwe">
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Амортизаторы ATV</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Амортизаторы ATV RUSAM</a>
+												<a href="" class="catalog-menu__link">Амортизаторы ATV SS-20</a>
+											</div>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Кофры, сумки и чехлы ATV</a>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Запчасти ATV Китай</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Электрооборудование ATV</a>
+												<a href="" class="catalog-menu__link">Ходовая часть ATV</a>
+												<a href="" class="catalog-menu__link">Трансмиссия ATV</a>
+												<a href="" class="catalog-menu__link">Тормозная система ATV</a>
+												<a href="" class="catalog-menu__link">Система охлаждения ATV</a>
+												<a href="" class="catalog-menu__link">Рулевое управление (детали руля) ATV</a>
+												<a href="" class="catalog-menu__link">Двигатель ATV</a>
+												<a href="" class="catalog-menu__link">Внешние световые приборы ATV</a>
+												<a href="" class="catalog-menu__link">Аксессуары</a>
+											</div>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Запчасти ATV</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Запчасти ATV RM</a>
+												<a href="" class="catalog-menu__link">Запчасти ATV СТЕЛС</a>
+												<a href="" class="catalog-menu__link">Запчасти ATV разное</a>
+												<a href="" class="catalog-menu__link">Фары, фонари ATV</a>
+											</div>
+										</div>
+									</div>
+									<div class="catalog-menu__section" data-catalog-menu-section="2">
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Фильтры ATV</a>
+											<a href="" class="catalog-menu__title-link">Подшипники ATV</a>
+											<a href="" class="catalog-menu__title-link">Колодки тормозные ATV</a>
+											<a href="" class="catalog-menu__title-link">Кофры, сумки и чехлы ATV</a>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Запчасти ATV</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Запчасти ATV RM</a>
+												<a href="" class="catalog-menu__link">Запчасти ATV СТЕЛС</a>
+												<a href="" class="catalog-menu__link">Запчасти ATV разное</a>
+												<a href="" class="catalog-menu__link">Фары, фонари ATV</a>
+											</div>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Амортизаторы ATV</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Амортизаторы ATV RUSAM</a>
+												<a href="" class="catalog-menu__link">Амортизаторы ATV SS-20</a>
+											</div>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Запчасти ATV Китай</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Электрооборудование ATV</a>
+												<a href="" class="catalog-menu__link">Ходовая часть ATV</a>
+												<a href="" class="catalog-menu__link">Трансмиссия ATV</a>
+												<a href="" class="catalog-menu__link">Тормозная система ATV</a>
+												<a href="" class="catalog-menu__link">Система охлаждения ATV</a>
+												<a href="" class="catalog-menu__link">Рулевое управление (детали руля) ATV</a>
+												<a href="" class="catalog-menu__link">Двигатель ATV</a>
+												<a href="" class="catalog-menu__link">Внешние световые приборы ATV</a>
+												<a href="" class="catalog-menu__link">Аксессуары</a>
+											</div>
+										</div>
+									</div>
+									<div class="catalog-menu__section" data-catalog-menu-section="zxc">
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Амортизаторы ATV</a>
+											<div class="catalog-menu__section-list">
+												<a href="" class="catalog-menu__link">Амортизаторы ATV RUSAM</a>
+												<a href="" class="catalog-menu__link">Амортизаторы ATV SS-20</a>
+												<a href="" class="catalog-menu__link">Электрооборудование ATV</a>
+												<a href="" class="catalog-menu__link">Ходовая часть ATV</a>
+												<a href="" class="catalog-menu__link">Трансмиссия ATV</a>
+												<a href="" class="catalog-menu__link">Тормозная система ATV</a>
+												<a href="" class="catalog-menu__link">Система охлаждения ATV</a>
+												<a href="" class="catalog-menu__link">Рулевое управление (детали руля) ATV</a>
+												<a href="" class="catalog-menu__link">Двигатель ATV</a>
+												<a href="" class="catalog-menu__link">Внешние световые приборы ATV</a>
+												<a href="" class="catalog-menu__link">Аксессуары</a>
+												<a href="" class="catalog-menu__link">Кофры, сумки и чехлы ATV</a>
+												<a href="" class="catalog-menu__link">Запчасти ATV RM</a>
+												<a href="" class="catalog-menu__link">Запчасти ATV СТЕЛС</a>
+												<a href="" class="catalog-menu__link">Запчасти ATV разное</a>
+												<a href="" class="catalog-menu__link">Фары, фонари ATV</a>
+											</div>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Запчасти ATV Китай</a>
+											<div class="catalog-menu__section-list">
+											</div>
+										</div>
+										<div class="catalog-menu__category">
+											<a href="" class="catalog-menu__title-link">Запчасти ATV</a>
+											<div class="catalog-menu__section-list">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</header>
 		<main class="page">
+			<div class="page__container">
+				<div class="catalog-preview">
+					<div class="catalog-preview__slider swiper">
+						<div class="catalog-preview__wrapper swiper-wrapper">
+							<a href="" class="catalog-preview__slide-ibg swiper-slide"><img src="img/catalog-preview_1.webp" alt=""></a>
+							<a href="" class="catalog-preview__slide-ibg swiper-slide"><img src="img/catalog-preview_1.webp" alt=""></a>
+							<a href="" class="catalog-preview__slide-ibg swiper-slide"><img src="img/catalog-preview_1.webp" alt=""></a>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+					<div class="catalog-preview__categories">
+						<div class="catalog-preview__category-chunk">
+							<div class="catalog-preview__category-ibg catalog-preview__category-ibg_contain"><img src="img/catalog-preview_category-1.webp" alt=""></div>
+							<div class="catalog-preview__inner">
+								<div class="catalog-preview__category-name">Сани-волокуши металл/пластик</div>
+								<a href="" class="catalog-preview__link button-transparent-white no-label"><img src="img/icons/arrow-button.svg" alt=""></a>
+							</div>
+						</div>
+						<div class="catalog-preview__category-chunk">
+							<div class="catalog-preview__category-ibg catalog-preview__category-ibg_contain"><img src="img/catalog-preview_category-2.webp" alt=""></div>
+							<div class="catalog-preview__inner">
+								<div class="catalog-preview__category-name">Гусеницы <br> для снегоходов</div>
+								<a href="" class="catalog-preview__link button-transparent-white no-label"><img src="img/icons/arrow-button.svg" alt=""></a>
+							</div>
+						</div>
+					</div>
+					<div class="catalog-preview__promo">
+						<div class="catalog-preview__category-chunk">
+							<div class="catalog-preview__category-ibg catalog-preview__category-ibg_contain"><img src="img/catalog-preview_category-3.webp" alt=""></div>
+							<div class="catalog-preview__inner">
+								<div class="catalog-preview__category-name">Аккумуляторы для снегоходов и квадроциклов</div>
+								<a href="" class="catalog-preview__link button-transparent-white">
+									<span>Перейти в каталог</span>
+									<img src="img/icons/arrow-button.svg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div data-tabs class="products-tabs tabs">
+					<nav data-tabs-titles class="products-tabs__nav tabs__navigation">
+						<button type="button" class="products-tabs__nav-title tabs__title _tab-active">Новинки</button>
+						<button type="button" class="products-tabs__nav-title tabs__title">Распродажа</button>
+					</nav>
+					<div data-tabs-body class="tabs__content">
+						<div class="tabs__body">
+							<div class="products">
+								<div class="products__slider swiper">
+									<div class="swiper__nav">
+										<button type="button" class="swiper-button swiper-button_prev">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#icon_slider-left"></use>
+											</svg>
+										</button>
+										<button type="button" class="swiper-button swiper-button_next">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#icon_slider-right"></use>
+											</svg>
+										</button>
+									</div>
+
+									<div class="products__wrapper swiper-wrapper">
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-1.webp" alt=""></div>
+												<a href="" class="product-card__name">Гусеница WT32 (54 шага, 8 рядов, 20*154*1.25) Yamaha VK540 IV/V /Composit</a>
+												<div class="product-card__price">520 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-2.webp" alt=""></div>
+												<a href="" class="product-card__name">Фильтр DD moto карб. MIKUNI/KEIHIN</a>
+												<div class="product-card__price">12 375 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-3.webp" alt=""></div>
+												<a href="" class="product-card__name">Очки VIKING Magnetic (black)</a>
+												<div class="product-card__price">996 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-4.webp" alt=""></div>
+												<a href="" class="product-card__name">Цилиндро-поршневая группа РМЗ-640 4-х кан. в сборе /Буран</a>
+												<div class="product-card__price">10 395 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-2.webp" alt=""></div>
+												<a href="" class="product-card__name">Фильтр DD moto карб. MIKUNI/KEIHIN</a>
+												<div class="product-card__price">12 375 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tabs__body">
+							<div class="products">
+								<div class="products__slider swiper">
+									<div class="swiper__nav">
+										<button type="button" class="swiper-button swiper-button_prev">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#icon_slider-left"></use>
+											</svg>
+										</button>
+										<button type="button" class="swiper-button swiper-button_next">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#icon_slider-right"></use>
+											</svg>
+										</button>
+									</div>
+
+									<div class="products__wrapper swiper-wrapper">
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-1.webp" alt=""></div>
+												<a href="" class="product-card__name">Гусеница WT32 (54 шага, 8 рядов, 20*154*1.25) Yamaha VK540 IV/V /Composit</a>
+												<div class="product-card__price">520 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-2.webp" alt=""></div>
+												<a href="" class="product-card__name">Фильтр DD moto карб. MIKUNI/KEIHIN</a>
+												<div class="product-card__price">12 375 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-3.webp" alt=""></div>
+												<a href="" class="product-card__name">Очки VIKING Magnetic (black)</a>
+												<div class="product-card__price">996 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-4.webp" alt=""></div>
+												<a href="" class="product-card__name">Цилиндро-поршневая группа РМЗ-640 4-х кан. в сборе /Буран</a>
+												<div class="product-card__price">10 395 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+										<div class="products__slide swiper-slide">
+											<div class="product-card">
+												<div class="product-card__header">
+													<div class="product-card__label">Рекомендуем</div>
+													<button type="button" class="product-card__favorite-button">
+														<img src="img/icons/icon_favor.svg" alt="">
+														<img src="img/icons/icon_favor-active.svg" alt="">
+													</button>
+												</div>
+												<div class="product-card__image-ibg product-card__image-ibg_contain"><img src="img/product-card-2.webp" alt=""></div>
+												<a href="" class="product-card__name">Фильтр DD moto карб. MIKUNI/KEIHIN</a>
+												<div class="product-card__price">12 375 <span>₽</span></div>
+												<div class="product-card__status">
+													<div class="product-status">
+														<img src="img/icons/product-status.svg" alt="">
+														<span>В наличии</span>
+													</div>
+												</div>
+												<div class="product-card__footer">
+													<div class="product-card__quantity">
+														<div data-quantity class="quantity">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input">
+																<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+															</div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<a href="" class="product-card__button button-blue">В корзину</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mp-advantages">
+					<div class="mp-advantages__card">
+						<div class="mp-advantages__inner">
+							<div class="mp-advantages__icon"><img src="img/icons/mp-advantages__icon-1.svg" alt=""></div>
+							<div class="mp-advantages__title">
+								Товар <br>
+								в наличии
+							</div>
+							<div class="mp-advantages__text">
+								Никаких задержек и долгих доставок. Просто оформите заказ и заберите его в ближайшее время.
+							</div>
+						</div>
+					</div>
+					<div class="mp-advantages__card mp-advantages__card_blue-image">
+						<div class="mp-advantages__image-ibg"><img src="img/mp-advantages__image-ibg-1.webp" alt=""></div>
+						<div class="mp-advantages__inner">
+							<div class="mp-advantages__icon"><img src="img/icons/mp-advantages__icon-2.svg" alt=""></div>
+							<div class="mp-advantages__title">
+								Скидки постоянным <br>
+								клиентам
+							</div>
+							<div class="mp-advantages__text">
+								Для наших постоянных клиентов действуют <br> специальные скидки и приятные бонусы.
+							</div>
+						</div>
+					</div>
+					<div class="mp-advantages__card">
+						<div class="mp-advantages__inner">
+							<div class="mp-advantages__icon"><img src="img/icons/mp-advantages__icon-3.svg" alt=""></div>
+							<div class="mp-advantages__title">
+								Отвечаем <br>
+								за качество
+							</div>
+							<div class="mp-advantages__text">
+								Каждый наш продукт проходит строгий контроль, чтобы вы получили только лучшее.
+							</div>
+						</div>
+					</div>
+					<div class="mp-advantages__card mp-advantages__card_blue">
+						<div class="mp-advantages__inner">
+							<div class="mp-advantages__icon"><img src="img/icons/mp-advantages__icon-4.svg" alt=""></div>
+							<div class="mp-advantages__title">
+								нас знают <br>
+								и рекомендуют
+							</div>
+							<div class="mp-advantages__text">
+								Мы гордимся своей репутацией <br>
+								и доверием клиентов, которые
+								возвращаются к нам снова.
+							</div>
+						</div>
+					</div>
+					<div class="mp-advantages__card mp-advantages__card_grey-image">
+						<div class="mp-advantages__image-ibg"><img src="img/mp-advantages__image-ibg-2.webp" alt=""></div>
+						<div class="mp-advantages__inner">
+							<div class="mp-advantages__icon"><img src="img/icons/mp-advantages__icon-5.svg" alt=""></div>
+							<div class="mp-advantages__title">
+								Редкие позиции, которые <br>
+								никогда не найти у конкурентов
+							</div>
+							<div class="mp-advantages__text">
+								Мы тщательно отбираем ассортимент, чтобы предложить
+								вам эксклюзивные товары. Ищете что-то редкое?
+								Вы точно найдете это у нас!
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="popular-categories">
+					<div class="popular-categories__header">
+						<div class="popular-categories__title">Популярные категории</div>
+						<div class="popular-categories__nav swiper__nav">
+							<button type="button" class="swiper-button swiper-button_prev">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#icon_slider-left"></use>
+								</svg>
+							</button>
+							<button type="button" class="swiper-button swiper-button_next">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#icon_slider-right"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="popular-categories__slider swiper">
+						<div class="popular-categories__wrapper swiper-wrapper">
+							<div class="popular-categories__slide swiper-slide">
+								<div class="popular-categories__card">
+									<div class="popular-categories__card-head">
+										<div class="popular-categories__name">Квадроциклы ATV</div>
+										<a href="" class="popular-categories__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="img/popular-categories-1.webp" alt=""></div>
+								</div>
+							</div>
+							<div class="popular-categories__slide swiper-slide">
+								<div class="popular-categories__card">
+									<div class="popular-categories__card-head">
+										<div class="popular-categories__name">Ремни вариаторные</div>
+										<a href="" class="popular-categories__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="img/popular-categories-2.webp" alt=""></div>
+								</div>
+							</div>
+							<div class="popular-categories__slide swiper-slide">
+								<div class="popular-categories__card">
+									<div class="popular-categories__card-head">
+										<div class="popular-categories__name">Капканы и ледорубы</div>
+										<a href="" class="popular-categories__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="img/popular-categories-3.webp" alt=""></div>
+								</div>
+							</div>
+							<div class="popular-categories__slide swiper-slide">
+								<div class="popular-categories__card">
+									<div class="popular-categories__card-head">
+										<div class="popular-categories__name">Кофры и чехлы снегоходов</div>
+										<a href="" class="popular-categories__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="img/popular-categories-4.webp" alt=""></div>
+								</div>
+							</div>
+							<div class="popular-categories__slide swiper-slide">
+								<div class="popular-categories__card">
+									<div class="popular-categories__card-head">
+										<div class="popular-categories__name">Квадроциклы ATV</div>
+										<a href="" class="popular-categories__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="img/popular-categories-1.webp" alt=""></div>
+								</div>
+							</div>
+							<div class="popular-categories__slide swiper-slide">
+								<div class="popular-categories__card">
+									<div class="popular-categories__card-head">
+										<div class="popular-categories__name">Ремни вариаторные</div>
+										<a href="" class="popular-categories__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="img/popular-categories-2.webp" alt=""></div>
+								</div>
+							</div>
+							<div class="popular-categories__slide swiper-slide">
+								<div class="popular-categories__card">
+									<div class="popular-categories__card-head">
+										<div class="popular-categories__name">Капканы и ледорубы</div>
+										<a href="" class="popular-categories__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="img/popular-categories-3.webp" alt=""></div>
+								</div>
+							</div>
+							<div class="popular-categories__slide swiper-slide">
+								<div class="popular-categories__card">
+									<div class="popular-categories__card-head">
+										<div class="popular-categories__name">Кофры и чехлы снегоходов</div>
+										<a href="" class="popular-categories__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="img/popular-categories-4.webp" alt=""></div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-scrollbar"></div>
+					</div>
+				</div>
+
+				<div class="mp-makers">
+					<div class="mp-makers__title">Производители техники</div>
+					<div class="mp-makers__subtitle">Подбор запчастей по марке</div>
+					<div class="mp-makers__main">
+						<button type="button" class="swiper-button swiper-button_prev">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon_slider-left"></use>
+							</svg>
+						</button>
+						<div class="mp-makers__slider swiper">
+							<div class="mp-makers__wrapper swiper-wrapper">
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-1-white.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-1-black.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">Русская <br> механика</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-2-white.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-2-black.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">POLARIS</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-3-white.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-3-black.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">YAMAHA</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-4-white.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-4-black.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">ARCTIC CAT</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-5.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-5.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">BRP SKI-DOO</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-1-white.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-1-black.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">Русская <br> механика</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-2-white.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-2-black.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">POLARIS</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-3-white.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-3-black.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">YAMAHA</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-4-white.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-4-black.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">ARCTIC CAT</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="mp-makers__slide swiper-slide">
+									<div class="mp-makers__card">
+										<div class="mp-makers__logo">
+											<img src="img/mp-makers__logo-5.svg" alt="" class="mp-makers__logo-main">
+											<img src="img/mp-makers__logo-5.svg" alt="" class="mp-makers__logo-hover">
+										</div>
+										<div class="mp-makers__name">BRP SKI-DOO</div>
+										<a href="" class="mp-makers__link">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow-link"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-scrollbar"></div>
+						</div>
+						<button type="button" class="swiper-button swiper-button_next">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon_slider-right"></use>
+							</svg>
+						</button>
+
+					</div>
+				</div>
+
+				<div class="reviews">
+					<div class="reviews__title">Отзывы наших клиентов</div>
+					<div class="reviews__chunk">
+						<review-lab data-widgetid="6861397d12d34d5457852157"></review-lab>
+						<script src="https://app.reviewlab.ru/widget/index-es2015.js?_v=20250707151955" defer></script>
+					</div>
+				</div>
+
+				<div class="page-form">
+					<div class="page-form__grid">
+						<div class="page-form__text">
+							<div class="page-form__title">Есть вопросы?</div>
+							<div class="page-form__descr">Оставьте свои контакты <br> и мы перезвоним</div>
+						</div>
+						<div class="page-form__form">
+							<form action="" class="form">
+								<div class="form__line">
+									<label for="" class="form__label">Ваше имя *</label>
+									<input required id="" type="text" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">Контактный телефон *</label>
+									<input required id="" type="tel" name="" class="form__input js_phone">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">E-mail</label>
+									<input id="" type="email" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__footer">
+									<button type="submit" class="form__button button-blue">Отправить</button>
+									<div class="form__check">
+										<label class="checkbox">
+											<input class="checkbox__input" type="checkbox">
+											<span class="checkbox__chunk"></span>
+											<span class="checkbox__text">Я даю свое <a href="/agreement/#tab-0-1">согласие на обработку персональных данных</a></span>
+										</label>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
+				<div class="footer__main">
+					<div class="footer__chunk">
+						<div class="footer__contacts">
+							<div class="footer__contact-item">
+								<div class="footer__contact-label">Торговый зал</div>
+								<a href="tel:+7 (391) 252-10-42" class="footer__phone">
+									<img src="img/icons/icon_phone.svg" alt="" class="footer__phone-icon">
+									<span>+7 (391) 252-10-42</span>
+								</a>
+							</div>
+							<div class="footer__contact-item">
+								<div class="footer__contact-label">Интернет-магазин</div>
+								<a href="tel:+7 (953) 585-00-39" class="footer__phone">
+									<img src="img/icons/icon_phone.svg" alt="" class="footer__phone-icon">
+									<span>+7 (953) 585-00-39</span>
+								</a>
+							</div>
+							<div class="footer__contact-item">
+								<div class="footer__contact-label">Склад</div>
+								<a href="tel:+7 (391) 276-81-40" class="footer__phone">
+									<img src="img/icons/icon_phone.svg" alt="" class="footer__phone-icon">
+									<span>+7 (391) 276-81-40</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="footer__chunk">
+						<div class="footer__grid">
+							<div class="footer__column">
+								<div class="footer__col-title">Покупателям:</div>
+								<div class="footer__menu">
+									<a href="" class="footer__link">Доставка</a>
+									<a href="" class="footer__link">Оплата</a>
+									<a href="" class="footer__link">Гарантия и возврат</a>
+									<a href="" class="footer__link">Для оптовиков</a>
+								</div>
+							</div>
+							<div class="footer__column">
+								<div class="footer__col-title">О компании:</div>
+								<div class="footer__menu">
+									<a href="" class="footer__link">О нас</a>
+									<a href="" class="footer__link">Вакансии</a>
+									<a href="" class="footer__link">Блог</a>
+									<a href="" class="footer__link">Контакты</a>
+								</div>
+							</div>
+							<div class="footer__column">
+								<div class="footer__col-title">График работы:</div>
+								<div class="footer__opening-hours">
+									<span>Пн-Пт: 10.00-18.00 </span>
+									<span>Сб: 10.00-16.00 </span>
+									<span>Вс: выходной</span>
+								</div>
+							</div>
+							<div class="footer__social">
+								<div class="footer__social-title">Следите за нами <br> в социальных сетях:</div>
+								<div class="footer__social-row">
+									<a href="" class="footer__social-link"><img src="img/icons/whatsapp-icon.svg" alt="" class="footer__social-icon"></a>
+									<a href="" class="footer__social-link"><img src="img/icons/telegram-icon.svg" alt="" class="footer__social-icon"></a>
+									<a href="" class="footer__social-link"><img src="img/icons/vk-icon.svg" alt="" class="footer__social-icon"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="footer__bottom copyright">
 					<div class="copyright__wrapper">
 						<div class="copyright__body">
 							<div class="copyright__item">
 								<span class="js-copyright-year">2023</span>
-								Название организации
+								© «Север Техника»
 								<script>
 									window.onload = () => document.querySelector('.js-copyright-year').innerText = new Date().getFullYear();
 								</script>
@@ -168,7 +1356,7 @@
 						<div class="share">
 							<div class="share__social">
 								<!-- uSocial -->
-								<script async src="https://usocial.pro/usocial/usocial.js?uid=21cd4b58eaf61697&v=6.1.5&_v=20250617214121" data-script="usocial" charset="utf-8"></script>
+								<script async src="https://usocial.pro/usocial/usocial.js?uid=21cd4b58eaf61697&v=6.1.5&_v=20250707151955" data-script="usocial" charset="utf-8"></script>
 								<div class="uSocial-Share" data-pid="b7450283dbc9e941ee22b283d6036804" data-type="share" data-options="round-rect,style1,default,absolute,horizontal,size48,eachCounter0,counter0,nomobile,mobile_position_right" data-social="vk,ok,telegram,wa,vi"></div>
 								<!-- /uSocial -->
 							</div>
@@ -205,9 +1393,6 @@
 						<button data-close type="button" class="popup__close">
 							Ok
 						</button>
-						<div class="popup__icon">
-							<img src="img/icons/popup__icon.svg" alt="">
-						</div>
 					</div>
 				</div>
 			</div>
@@ -261,9 +1446,28 @@
 			</div>
 		</div>
 		<!-- Заказать звонок -->
+		<!-- Живой поиск -->
+		<div id="live-search" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Поиск</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main live-search-container">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Живой поиск -->
 	</div>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250617214121" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="js/app.min.js?_v=20250617214121"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250707151955" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="js/app.min.js?_v=20250707151955"></script>
 </body>
 
 </html>

@@ -1,0 +1,145 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.page-form {
+   background: url(../img/page-form_bg.png) center / cover no-repeat;
+   padding-top: func.rem(78);
+   padding-bottom: func.rem(121);
+   border-radius: 15px;
+
+   @media (max-width:bp.$lg) {
+      padding-top: func.rem(30);
+      padding-bottom: func.rem(43);
+   }
+
+   // .page-form__grid
+
+   &__grid {
+      display: grid;
+      grid-template-columns: 1fr 459px;
+      gap: 30px;
+      max-width: 1050px;
+      margin: 0 auto;
+
+      @media (max-width:bp.$xxl) {
+         max-width: 930px;
+      }
+
+      @media (max-width:bp.$xl) {
+         grid-template-columns: 1fr 358px;
+         padding: func.rem(0) func.rem(50);
+      }
+
+      @media (max-width:bp.$lg) {
+         grid-template-columns: 1fr;
+         padding: func.rem(0) func.rem(65);
+      }
+
+      @media (max-width:bp.$sm) {
+         padding: func.rem(0) func.rem(20);
+      }
+   }
+
+   // .page-form__text
+
+   &__text {}
+
+   // .page-form__title
+
+   &__title {
+      font-weight: 500;
+      font-size: 42px;
+      color: #fff;
+      margin-bottom: func.rem(20);
+
+      @media (max-width:bp.$lg) {
+         font-size: 32px;
+         margin-bottom: func.rem(12);
+      }
+   }
+
+   // .page-form__descr
+
+   &__descr {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 140%;
+      color: #fff;
+   }
+
+   // .page-form__form
+
+   &__form {
+      .form {
+
+         // .form__line
+
+         &__line {
+            &._form-focus {
+               .form__label {
+                  color: #fff;
+               }
+            }
+         }
+
+         // .form__label
+
+         &__label {}
+
+         // .form__input
+
+         &__input {}
+
+         // .form__clear-svg
+
+         &__clear-svg {}
+
+         // .form__footer
+
+         &__footer {
+            @media (max-width:bp.$sm) {
+               display: grid;
+            }
+         }
+
+         // .form__button
+
+         &__button {}
+
+         // .form__check
+
+         &__check {
+            .checkbox {
+
+               // .checkbox__input
+
+               &__input {}
+
+               .checkbox__input:checked+.checkbox__chunk {
+                  background: #4C4C4C url("../img/icons/icon_check.svg") center center / 12px 12px no-repeat;
+                  box-shadow: none;
+               }
+
+               // .checkbox__chunk
+
+               &__chunk {
+                  width: 16px;
+                  height: 16px;
+               }
+
+               // .checkbox__text
+
+               &__text {
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 150%;
+                  color: rgba(255, 255, 255, 0.5);
+               }
+            }
+
+         }
+      }
+   }
+}

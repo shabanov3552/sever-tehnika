@@ -3,5 +3,429 @@
 "modClass":""
 })
 <main class="page">
+   <div class="page__container">
+      <div class="catalog-preview">
+         <div class="catalog-preview__slider swiper">
+            <div class="catalog-preview__wrapper swiper-wrapper">
+               <a href="" class="catalog-preview__slide-ibg swiper-slide"><img src="@img/catalog-preview_1.png" alt=""></a>
+               <a href="" class="catalog-preview__slide-ibg swiper-slide"><img src="@img/catalog-preview_1.png" alt=""></a>
+               <a href="" class="catalog-preview__slide-ibg swiper-slide"><img src="@img/catalog-preview_1.png" alt=""></a>
+            </div>
+            <div class="swiper-pagination"></div>
+         </div>
+         <div class="catalog-preview__categories">
+            <div class="catalog-preview__category-chunk">
+               <div class="catalog-preview__category-ibg catalog-preview__category-ibg_contain"><img src="@img/catalog-preview_category-1.png" alt=""></div>
+               <div class="catalog-preview__inner">
+                  <div class="catalog-preview__category-name">Сани-волокуши металл/пластик</div>
+                  <a href="" class="catalog-preview__link button-transparent-white no-label"><img src="@img/icons/arrow-button.svg" alt=""></a>
+               </div>
+            </div>
+            <div class="catalog-preview__category-chunk">
+               <div class="catalog-preview__category-ibg catalog-preview__category-ibg_contain"><img src="@img/catalog-preview_category-2.png" alt=""></div>
+               <div class="catalog-preview__inner">
+                  <div class="catalog-preview__category-name">Гусеницы <br> для снегоходов</div>
+                  <a href="" class="catalog-preview__link button-transparent-white no-label"><img src="@img/icons/arrow-button.svg" alt=""></a>
+               </div>
+            </div>
+         </div>
+         <div class="catalog-preview__promo">
+            <div class="catalog-preview__category-chunk">
+               <div class="catalog-preview__category-ibg catalog-preview__category-ibg_contain"><img src="@img/catalog-preview_category-3.png" alt=""></div>
+               <div class="catalog-preview__inner">
+                  <div class="catalog-preview__category-name">Аккумуляторы для снегоходов и квадроциклов</div>
+                  <a href="" class="catalog-preview__link button-transparent-white">
+                     <span>Перейти в каталог</span>
+                     <img src="@img/icons/arrow-button.svg" alt="">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div data-tabs class="products-tabs tabs">
+         <nav data-tabs-titles class="products-tabs__nav tabs__navigation">
+            <button type="button" class="products-tabs__nav-title tabs__title _tab-active">Новинки</button>
+            <button type="button" class="products-tabs__nav-title tabs__title">Распродажа</button>
+         </nav>
+         <div data-tabs-body class="tabs__content">
+            <div class="tabs__body">
+               @@include('html/_products-slider.htm',{})
+            </div>
+            <div class="tabs__body">
+               @@include('html/_products-slider.htm',{})
+            </div>
+         </div>
+      </div>
+
+      <div class="mp-advantages">
+         <div class="mp-advantages__card">
+            <div class="mp-advantages__inner">
+               <div class="mp-advantages__icon"><img src="@img/icons/mp-advantages__icon-1.svg" alt=""></div>
+               <div class="mp-advantages__title">
+                  Товар <br>
+                  в наличии
+               </div>
+               <div class="mp-advantages__text">
+                  Никаких задержек и долгих доставок. Просто оформите заказ и заберите его в ближайшее время.
+               </div>
+            </div>
+         </div>
+         <div class="mp-advantages__card mp-advantages__card_blue-image">
+            <div class="mp-advantages__image-ibg"><img src="@img/mp-advantages__image-ibg-1.png" alt=""></div>
+            <div class="mp-advantages__inner">
+               <div class="mp-advantages__icon"><img src="@img/icons/mp-advantages__icon-2.svg" alt=""></div>
+               <div class="mp-advantages__title">
+                  Скидки постоянным <br>
+                  клиентам
+               </div>
+               <div class="mp-advantages__text">
+                  Для наших постоянных клиентов действуют <br> специальные скидки и приятные бонусы.
+               </div>
+            </div>
+         </div>
+         <div class="mp-advantages__card">
+            <div class="mp-advantages__inner">
+               <div class="mp-advantages__icon"><img src="@img/icons/mp-advantages__icon-3.svg" alt=""></div>
+               <div class="mp-advantages__title">
+                  Отвечаем <br>
+                  за качество
+               </div>
+               <div class="mp-advantages__text">
+                  Каждый наш продукт проходит строгий контроль, чтобы вы получили только лучшее.
+               </div>
+            </div>
+         </div>
+         <div class="mp-advantages__card mp-advantages__card_blue">
+            <div class="mp-advantages__inner">
+               <div class="mp-advantages__icon"><img src="@img/icons/mp-advantages__icon-4.svg" alt=""></div>
+               <div class="mp-advantages__title">
+                  нас знают <br>
+                  и рекомендуют
+               </div>
+               <div class="mp-advantages__text">
+                  Мы гордимся своей репутацией <br>
+                  и доверием клиентов, которые
+                  возвращаются к нам снова.
+               </div>
+            </div>
+         </div>
+         <div class="mp-advantages__card mp-advantages__card_grey-image">
+            <div class="mp-advantages__image-ibg"><img src="@img/mp-advantages__image-ibg-2.png" alt=""></div>
+            <div class="mp-advantages__inner">
+               <div class="mp-advantages__icon"><img src="@img/icons/mp-advantages__icon-5.svg" alt=""></div>
+               <div class="mp-advantages__title">
+                  Редкие позиции, которые <br>
+                  никогда не найти у конкурентов
+               </div>
+               <div class="mp-advantages__text">
+                  Мы тщательно отбираем ассортимент, чтобы предложить
+                  вам эксклюзивные товары. Ищете что-то редкое?
+                  Вы точно найдете это у нас!
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="popular-categories">
+         <div class="popular-categories__header">
+            <div class="popular-categories__title">Популярные категории</div>
+            <div class="popular-categories__nav swiper__nav">
+               <button type="button" class="swiper-button swiper-button_prev">
+                  <svg>
+                     <use xlink:href="img/icons/icons.svg#icon_slider-left"></use>
+                  </svg>
+               </button>
+               <button type="button" class="swiper-button swiper-button_next">
+                  <svg>
+                     <use xlink:href="img/icons/icons.svg#icon_slider-right"></use>
+                  </svg>
+               </button>
+            </div>
+         </div>
+         <div class="popular-categories__slider swiper">
+            <div class="popular-categories__wrapper swiper-wrapper">
+               <div class="popular-categories__slide swiper-slide">
+                  <div class="popular-categories__card">
+                     <div class="popular-categories__card-head">
+                        <div class="popular-categories__name">Квадроциклы ATV</div>
+                        <a href="" class="popular-categories__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="@img/popular-categories-1.png" alt=""></div>
+                  </div>
+               </div>
+               <div class="popular-categories__slide swiper-slide">
+                  <div class="popular-categories__card">
+                     <div class="popular-categories__card-head">
+                        <div class="popular-categories__name">Ремни вариаторные</div>
+                        <a href="" class="popular-categories__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="@img/popular-categories-2.png" alt=""></div>
+                  </div>
+               </div>
+               <div class="popular-categories__slide swiper-slide">
+                  <div class="popular-categories__card">
+                     <div class="popular-categories__card-head">
+                        <div class="popular-categories__name">Капканы и ледорубы</div>
+                        <a href="" class="popular-categories__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="@img/popular-categories-3.png" alt=""></div>
+                  </div>
+               </div>
+               <div class="popular-categories__slide swiper-slide">
+                  <div class="popular-categories__card">
+                     <div class="popular-categories__card-head">
+                        <div class="popular-categories__name">Кофры и чехлы снегоходов</div>
+                        <a href="" class="popular-categories__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="@img/popular-categories-4.png" alt=""></div>
+                  </div>
+               </div>
+               <div class="popular-categories__slide swiper-slide">
+                  <div class="popular-categories__card">
+                     <div class="popular-categories__card-head">
+                        <div class="popular-categories__name">Квадроциклы ATV</div>
+                        <a href="" class="popular-categories__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="@img/popular-categories-1.png" alt=""></div>
+                  </div>
+               </div>
+               <div class="popular-categories__slide swiper-slide">
+                  <div class="popular-categories__card">
+                     <div class="popular-categories__card-head">
+                        <div class="popular-categories__name">Ремни вариаторные</div>
+                        <a href="" class="popular-categories__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="@img/popular-categories-2.png" alt=""></div>
+                  </div>
+               </div>
+               <div class="popular-categories__slide swiper-slide">
+                  <div class="popular-categories__card">
+                     <div class="popular-categories__card-head">
+                        <div class="popular-categories__name">Капканы и ледорубы</div>
+                        <a href="" class="popular-categories__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="@img/popular-categories-3.png" alt=""></div>
+                  </div>
+               </div>
+               <div class="popular-categories__slide swiper-slide">
+                  <div class="popular-categories__card">
+                     <div class="popular-categories__card-head">
+                        <div class="popular-categories__name">Кофры и чехлы снегоходов</div>
+                        <a href="" class="popular-categories__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="popular-categories__image-ibg popular-categories__image-ibg_contain"><img src="@img/popular-categories-4.png" alt=""></div>
+                  </div>
+               </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+         </div>
+      </div>
+
+      <div class="mp-makers">
+         <div class="mp-makers__title">Производители техники</div>
+         <div class="mp-makers__subtitle">Подбор запчастей по марке</div>
+         <div class="mp-makers__main">
+            <button type="button" class="swiper-button swiper-button_prev">
+               <svg>
+                  <use xlink:href="img/icons/icons.svg#icon_slider-left"></use>
+               </svg>
+            </button>
+            <div class="mp-makers__slider swiper">
+               <div class="mp-makers__wrapper swiper-wrapper">
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-1-white.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-1-black.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">Русская <br> механика</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-2-white.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-2-black.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">POLARIS</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-3-white.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-3-black.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">YAMAHA</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-4-white.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-4-black.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">ARCTIC CAT</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-5.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-5.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">BRP SKI-DOO</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-1-white.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-1-black.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">Русская <br> механика</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-2-white.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-2-black.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">POLARIS</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-3-white.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-3-black.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">YAMAHA</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-4-white.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-4-black.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">ARCTIC CAT</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="mp-makers__slide swiper-slide">
+                     <div class="mp-makers__card">
+                        <div class="mp-makers__logo">
+                           <img src="@img/mp-makers__logo-5.svg" alt="" class="mp-makers__logo-main">
+                           <img src="@img/mp-makers__logo-5.svg" alt="" class="mp-makers__logo-hover">
+                        </div>
+                        <div class="mp-makers__name">BRP SKI-DOO</div>
+                        <a href="" class="mp-makers__link">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#arrow-link"></use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-scrollbar"></div>
+            </div>
+            <button type="button" class="swiper-button swiper-button_next">
+               <svg>
+                  <use xlink:href="img/icons/icons.svg#icon_slider-right"></use>
+               </svg>
+            </button>
+
+         </div>
+      </div>
+
+      <div class="reviews">
+         <div class="reviews__title">Отзывы наших клиентов</div>
+         <div class="reviews__chunk">
+            <review-lab data-widgetid="6861397d12d34d5457852157"></review-lab>
+            <script src="https://app.reviewlab.ru/widget/index-es2015.js" defer></script>
+         </div>
+      </div>
+
+      @@include('html/_page-form.htm',{})
+   </div>
 </main>
 @@include('html/_footer.htm',{})

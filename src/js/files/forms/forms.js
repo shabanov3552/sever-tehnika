@@ -54,9 +54,18 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 					inputClearButton.classList.add('_active');
 				}
 			}
+			if (targetElement.closest('.live-search')) {
+				const liveSearchNode = targetElement.closest('.live-search');
+				const liveSearchResultLength = liveSearchNode.querySelectorAll('.live-search-result__card, .live-search-result__link').length
+				if (liveSearchResultLength > 0) {
+					liveSearchNode.classList.add('show-result');
+				}
+			}
 		}
 	});
+	document.body.addEventListener("focus", function (e) { console.log(e); });
 	document.body.addEventListener("focusin", function (e) {
+
 		const targetElement = e.target;
 		if ((targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
 			if (targetElement.dataset.placeholder) {
@@ -95,6 +104,13 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 				}
 			}).mask(targetElement);
 		}
+		if (targetElement.closest('.live-search')) {
+			const liveSearchNode = targetElement.closest('.live-search');
+			const liveSearchResultLength = liveSearchNode.querySelectorAll('.live-search-result__card, .live-search-result__link').length
+			if (liveSearchResultLength > 0) {
+				liveSearchNode.classList.add('show-result');
+			}
+		}
 	});
 	document.body.addEventListener("focusout", function (e) {
 		const targetElement = e.target;
@@ -116,6 +132,10 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 			// Моментальная валидация
 			if (targetElement.hasAttribute('data-validate')) {
 				formValidate.validateInput(targetElement);
+			}
+			if (targetElement.closest('.live-search')) {
+				const liveSearchNode = targetElement.closest('.live-search');
+				liveSearchNode.classList.remove('show-result');
 			}
 		}
 	});

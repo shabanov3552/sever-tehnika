@@ -1,7 +1,12 @@
 @use 'functions' as func;
 
 :root {
-	--red-error: #ca2e33; // цвет ошибки в формах
+	--red-error: #d0021b; // цвет ошибки в формах
+	--blue: #0465ba;
+	--blue-active: #258eeb;
+	--light-blue: #e6f2fd;
+	--green: #258a41;
+	--red: #cf1235;
 
 	--font-family: "Roboto", sans-serif;
 	--second-family: "Montserrat", sans-serif;

@@ -37,6 +37,7 @@ textarea {
 
 	&__line {
 		position: relative;
+		margin-bottom: func.rem(28);
 
 		&._form-focus {
 			.form__label {
@@ -140,6 +141,14 @@ textarea {
 				opacity: 1;
 			}
 		}
+	}
+
+	// .form__footer
+
+	&__footer {
+		display: flex;
+		gap: 25px;
+		align-items: flex-start;
 	}
 }
 

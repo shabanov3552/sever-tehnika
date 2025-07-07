@@ -59,7 +59,7 @@
 
 		/* Checked */
 		&:checked+.checkbox__chunk {
-			background: #4C4C4C url('../../../img/icons/icon_check.svg') center center no-repeat;
+			background: #4C4C4C url('../img/icons/icon_check.svg') center center no-repeat;
 			box-shadow: none;
 		}
 
@@ -81,7 +81,7 @@
 	// .checkbox__chunk
 
 	&__chunk {
-		flex: 0 0 24px;
+		flex-shrink: 0;
 		width: 24px;
 		height: 24px;
 		background: #FFFFFF;
@@ -93,5 +93,13 @@
 
 	// .checkbox__text
 
-	&__text {}
+	&__text {
+		a {
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
 }

@@ -5,24 +5,25 @@
 	// .tabs__navigation
 	&__navigation {
 		display: flex;
+		gap: 41px;
 	}
 
 	// .tabs__title
 	&__title {
-		border: 1px solid #eee;
-		padding: func.rem(10) func.rem(15);
-		border-radius: func.rem(5);
+		font-weight: 500;
+		font-size: 26px;
+		text-transform: uppercase;
+		color: #979797;
+		border-bottom: 3px solid transparent;
 
 		&._tab-active {
-			border: 1px solid #000;
+			color: #000;
+			border-color: var(--blue);
 		}
 	}
 
 	// .tabs__content
-	&__content {
-		border: 1px solid #eee;
-		padding: func.rem(10) func.rem(15);
-	}
+	&__content {}
 
 	// .tabs__body
 	&__body {}

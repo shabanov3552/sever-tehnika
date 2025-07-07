@@ -69,7 +69,7 @@
 	// .breadcrumbs__li
 
 	&__li {
-		margin: func.rem(0) func.rem(15) func.rem(5) func.rem(0);
+		margin: func.rem(0) func.rem(5) func.rem(5) func.rem(0);
 		display: flex;
 		align-items: center;
 		white-space: nowrap;
@@ -80,7 +80,7 @@
 				display: block;
 				// height: 70%;
 				// width: 2px;
-				margin-left: func.rem(15);
+				margin-left: func.rem(5);
 			}
 		}
 	}
@@ -92,6 +92,10 @@
 		font-size: 14px;
 		line-height: 22px;
 		white-space: nowrap;
+
+		&:hover {
+			text-decoration: underline;
+		}
 
 		.page-about & {
 			color: #fff;

@@ -1,0 +1,222 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.product-card {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   // .product-card__header
+
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 17px;
+      left: 18px;
+      right: 18px;
+      z-index: 2;
+
+      .catalog & {
+         @media (max-width:bp.$sm) {
+            // display: grid;
+            left: 0;
+            right: 0;
+            // justify-content: normal;
+         }
+      }
+   }
+
+   // .product-card__label
+
+   &__label {
+      font-family: var(--font-family);
+      background: var(--blue);
+      border-radius: 44px;
+      padding: func.rem(6) func.rem(16) func.rem(5) func.rem(8);
+      line-height: 1;
+      color: #fff;
+      font-weight: 500;
+      font-size: 15px;
+      text-transform: uppercase;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+
+      .catalog & {
+         @media (max-width:bp.$sm) {
+            font-size: 10px;
+         }
+      }
+
+      &::before {
+         content: '';
+         width: 4.81px;
+         height: 4.81px;
+         flex-shrink: 0;
+         background-color: #fff;
+         border-radius: 100%;
+         display: block;
+      }
+   }
+
+   // .product-card__favorite-button
+
+   &__favorite-button {
+      width: 21px;
+      height: 27px;
+
+      img {
+         width: 100%;
+         height: 100%;
+
+         &:first-child {}
+
+         &:last-child {
+            display: none;
+         }
+      }
+
+      .catalog & {
+         // @media (max-width:bp.$sm) {
+         //    justify-self: end;
+         // }
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            img {
+
+               &:first-child {
+                  display: none;
+               }
+
+               &:last-child {
+                  display: block;
+               }
+            }
+         }
+      }
+
+      &._active {
+         img {
+
+            &:first-child {
+               display: none;
+            }
+
+            &:last-child {
+               display: block;
+            }
+         }
+
+         @media (any-hover: hover) {
+            &:hover {
+               img {
+
+                  &:first-child {
+                     display: block;
+                  }
+
+                  &:last-child {
+                     display: none;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   // .product-card__image-ibg
+
+   &__image-ibg {
+      height: 320px;
+      z-index: 1;
+      background-color: #fff;
+
+      @media (max-width:bp.$xl) {
+         height: 280px;
+      }
+
+      // .product-card__image-ibg_contain
+
+      &_contain {}
+   }
+
+   // .product-card__name
+
+   &__name {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 114%;
+      color: #000;
+      margin-bottom: func.rem(18);
+      display: block;
+      flex: 1 1 auto;
+
+      &::before {
+         content: '';
+         position: absolute;
+         top: 60px;
+         left: 0;
+         right: 0;
+         height: 16rem;
+         z-index: 1;
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+
+   // .product-card__price
+
+   &__price {
+      font-weight: 500;
+      font-size: 26px;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: func.rem(22);
+
+      span {
+         font-family: var(--second-family);
+         font-weight: 600;
+      }
+   }
+
+   // .product-card__status
+
+   &__status {
+      margin-bottom: func.rem(22);
+   }
+
+   // .product-card__footer
+
+   &__footer {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      justify-content: start;
+      gap: 17px;
+   }
+
+   // .product-card__quantity
+
+   &__quantity {
+      width: 121px;
+
+      .quantity {
+         width: 100%;
+      }
+   }
+
+   // .product-card__button
+
+   &__button {
+      width: 100%;
+      max-width: 160px;
+   }
+}

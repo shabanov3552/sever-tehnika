@@ -1,0 +1,240 @@
+@@include('html/_header.htm',{
+"title":"Каталог 2 ур.",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page-title">Двигатели</div>
+
+      <div class="catalog">
+         <div class="catalog__grid">
+            <div class="catalog__sidebar">
+               <button type="button" class="catalog__back-button">
+                  <svg class="catalog__back-button-icon">
+                     <use xlink:href="img/icons/icons.svg#arrow-catalog-back"></use>
+                  </svg>
+                  <span class="catalog__back-button-label">Двигатели</span>
+               </button>
+               <div data-showmore="items" class="catalog__categories">
+                  <div data-showmore-content="7" class="catalog__categories-list">
+                     <a href="" class="catalog__categories-link _active">Запчасти снегоходов Буран</a>
+                     <a href="" class="catalog__categories-link">Гусеницы Composit</a>
+                     <a href="" class="catalog__categories-link">Датчики температурные</a>
+                     <a href="" class="catalog__categories-link">Запчасти снегоходов Тайга</a>
+                     <a href="" class="catalog__categories-link">Каталоги печатные</a>
+                     <a href="" class="catalog__categories-link">Запчасти снегоходов Рыбинка, Тикси</a>
+                     <a href="" class="catalog__categories-link">Накладки на лыжи</a>
+                     <a href="" class="catalog__categories-link">Запчасти снегоходов Буран</a>
+                     <a href="" class="catalog__categories-link">Гусеницы Composit</a>
+                     <a href="" class="catalog__categories-link">Датчики температурные</a>
+                     <a href="" class="catalog__categories-link">Запчасти снегоходов Тайга</a>
+                     <a href="" class="catalog__categories-link">Каталоги печатные</a>
+                     <a href="" class="catalog__categories-link">Запчасти снегоходов Рыбинка, Тикси</a>
+                     <a href="" class="catalog__categories-link">Накладки на лыжи</a>
+                  </div>
+                  <button hidden data-showmore-button type="button" class="catalog__more"><span>Раскрыть все</span><span>Скрыть</span></button>
+               </div>
+               <div class="catalog__filters filters">
+                  <form action="" class="filters__form" data-da="#filters-more .popup__filters, 991.98">
+                     <div class="filters__block">
+                        <div class="filters__title">Цена (₽)</div>
+
+                        <div class="price">
+                           <div class="price__inputs">
+                              <input autocomplete="off" type="number" name="form[]" placeholder="" class="price__input form__input js_input-from">
+                              <span> — </span>
+                              <input autocomplete="off" type="number" name="form[]" placeholder="" class="price__input form__input js_input-to">
+                           </div>
+                           <div class="price__range-slider">
+                              <div class="js-range" data-from="1" data-to="9999"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="filters__block">
+                        <div class="filters__title">Тип</div>
+                        <div class="filters__chunk">
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Первый</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Второй</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Третий</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Четвертый</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Пятый с длинным названием</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Шестой</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Первый</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Второй</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Третий</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Четвертый</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Пятый с длинным названием</span>
+                           </label>
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox">
+                              <div class="checkbox__chunk"></div>
+                              <span class="checkbox__text">Шестой</span>
+                           </label>
+                        </div>
+                     </div>
+
+                     <button type="reset" class="filters__reset-button filters-reset-button">
+                        <svg class="filters-reset-button__icon">
+                           <use xlink:href="img/icons/icons.svg#icon_reset"></use>
+                        </svg>
+                        <span>Сбросить</span>
+                     </button>
+                  </form>
+               </div>
+            </div>
+            <div class="catalog__main">
+               <div class="catalog__header">
+                  <div class="catalog__sort sort">
+                     <div class="sort__title">Сортировка</div>
+                     <div class="sort__wrapper">
+                        <select name="" data-class-modif="">
+                           <option value="1" selected>По возрастанию цены</option>
+                           <option value="2">Пункт №2</option>
+                           <option value="3">Пункт №3</option>
+                           <option value="4">Пункт №4</option>
+                        </select>
+                        <select name="" data-class-modif="">
+                           <option value="1" selected>Показывать по 12</option>
+                           <option value="2">Пункт №2</option>
+                           <option value="3">Пункт №3</option>
+                           <option value="4">Пункт №4</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="catalog__selected-filters selected-filters" data-da="#filters-more .popup__filters, 991.98, first">
+                     <div class="selected-filters__list">
+                        <div class="selected-filters__item">
+                           <div class="selected-filters__label">Первый</div>
+                           <button type="button" class="selected-filters__delete-button">
+                              <svg class="selected-filters__delete-button-icon">
+                                 <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                              </svg>
+                           </button>
+                        </div>
+                        <div class="selected-filters__item">
+                           <div class="selected-filters__label">Второй</div>
+                           <button type="button" class="selected-filters__delete-button">
+                              <svg class="selected-filters__delete-button-icon">
+                                 <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                              </svg>
+                           </button>
+                        </div>
+                        <div class="selected-filters__item">
+                           <div class="selected-filters__label">Третий</div>
+                           <button type="button" class="selected-filters__delete-button">
+                              <svg class="selected-filters__delete-button-icon">
+                                 <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                              </svg>
+                           </button>
+                        </div>
+                     </div>
+                     <button type="button" class="selected-filters__reset-button filters-reset-button">
+                        <svg class="filters-reset-button__icon">
+                           <use xlink:href="img/icons/icons.svg#icon_reset"></use>
+                        </svg>
+                        <span>Сбросить</span>
+                     </button>
+                  </div>
+                  <button type="submit" class="catalog__popup-button" data-popup="#filters-more">
+                     <svg>
+                        <use xlink:href="img/icons/icons.svg#filters-btn"></use>
+                     </svg>
+                  </button>
+               </div>
+               <div class="catalog__content">
+                  <div class="catalog__products">
+                     @@include('html/_product-card.htm',{
+                     "src":"product-card-1.png",
+                     "name":"Гусеница WT32 (54 шага, 8 рядов, 20*154*1.25) Yamaha VK540 IV/V /Composit",
+                     "price":"520"
+                     })
+                     @@include('html/_product-card.htm',{
+                     "src":"product-card-2.png",
+                     "name":"Фильтр DD moto карб. MIKUNI/KEIHIN",
+                     "price":"12 375"
+                     })
+                     @@include('html/_product-card.htm',{
+                     "src":"product-card-3.png",
+                     "name":"Очки VIKING Magnetic (black)",
+                     "price":"996"
+                     })
+                     @@include('html/_product-card.htm',{
+                     "src":"product-card-4.png",
+                     "name":"Цилиндро-поршневая группа РМЗ-640 4-х кан. в сборе /Буран",
+                     "price":"10 395"
+                     })
+                     @@include('html/_product-card.htm',{
+                     "src":"product-card-2.png",
+                     "name":"Фильтр DD moto карб. MIKUNI/KEIHIN",
+                     "price":"12 375"
+                     })
+                  </div>
+                  @@include('html/_pagging.htm',{})
+               </div>
+            </div>
+         </div>
+         <div id="filters-more" aria-hidden="true" class="popup">
+            <div class="popup__wrapper">
+               <div class="popup__content">
+                  <div class="popup__header">
+                     <div class="popup__title">Фильтры</div>
+                     <button data-close type="button" class="popup__close">
+                        <svg class="popup__close-svg">
+                           <use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+                        </svg>
+                     </button>
+                  </div>
+                  <div class="popup__main popup__filters">
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

@@ -1,33 +1,11 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, bodyLockToggle, bodyLockStatus } from "./functions.js";
+import { isMobile, bodyLockToggle, bodyLockStatus, bodyUnlock, bodyLock } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
 //#region Глобальный клик
 
 document.addEventListener("click", function (e) {
-   // открыть модалку каталога
-   if (bodyLockStatus && e.target.closest('.js-open-sidebar-catalog')) {
-      bodyLockToggle();
-      document.documentElement.classList.toggle("sidebar-catalog-open");
-      if (window.matchMedia("(min-width: 991.98px)").matches && !isMobile.any()) {
-         document.addEventListener("mouseover", sidebarCatalogActions);
-         document.removeEventListener("click", sidebarCatalogActions);
-      } else {
-         document.addEventListener("click", sidebarCatalogActions);
-         document.removeEventListener("mouseover", sidebarCatalogActions);
-      }
-   }
-
-   // закрыть модалку каталога
-   if (e.target.closest('.js-sidebar-catalog-close')) {
-      bodyLockToggle();
-      document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
-   }
-   if (!e.target.closest('.sidebar-catalog') && document.querySelector('.sidebar-catalog-open') && !e.target.closest('.js-open-sidebar-catalog')) {
-      bodyLockToggle();
-      document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
-   }
 
    // очистка input по клику на крестик
    if (e.target.closest('.form__clear-svg') || e.target.closest('.js-clear-input')) {
@@ -248,43 +226,77 @@ if (sidebarCatalogMenuChunk !== null) {
 //#region Открыть/закрыть боковой каталог + Открытие закрытие подкатегорий в каталоге
 
 function sidebarCatalogActions(e) {
-   if (e.target.closest('[data-parent]')) {
-      const targetElement = e.target.closest('[data-parent]');
-      const subMenuId = targetElement.closest('[data-parent]').dataset.parent ? targetElement.closest('[data-parent]').dataset.parent : null;
-      const subMenu = document.querySelector(`[data-submenu="${subMenuId}"]`);
+   const wrapper = document.querySelector('.wrapper');
+   const openButton = e.target.closest('.js-catalog-menu-open') ? e.target.closest('.js-catalog-menu-open') : null;
+   const closeButton = e.target.closest('.js-catalog-menu-close') ? e.target.closest('.js-catalog-menu-close') : null;
+   const backButton = e.target.closest('.js-catalog-menu-back') ? e.target.closest('.js-catalog-menu-back') : null;
+   const menuItem = e.target.closest('[data-catalog-menu-item]') ? e.target.closest('[data-catalog-menu-item]') : null;
+   const activeLink = document.querySelector('.catalog-menu__item._active');
+   const activeBlock = document.querySelector('.catalog-menu__section._active');
+
+   if (openButton) {
+      wrapper.classList.toggle('catalog-menu-open');
+      if (window.matchMedia('(max-width:991.98px)').matches) {
+         bodyLock();
+      }
+   }
+
+   if (closeButton) {
+      wrapper.classList.remove('catalog-menu-open');
+      closeSubMenu(activeLink, activeBlock, wrapper);
+      bodyUnlock(300);
+   }
+
+   if (menuItem) {
+      const subMenuId = menuItem.dataset.catalogMenuItem ? menuItem.dataset.catalogMenuItem : null;
+      const subMenu = document.querySelector(`[data-catalog-menu-section="${subMenuId}"]`);
+
       if (subMenu) {
-         const activeLink = document.querySelector('._sub-menu-active');
-         const activeBlock = document.querySelector('._sub-menu-open');
 
-
-         if (activeLink && activeLink !== targetElement) {
-            activeLink.classList.remove('_sub-menu-active');
-            activeBlock.classList.remove('_sub-menu-open');
-            document.documentElement.classList.remove('sidebar-sub-catalog-open');
+         if (activeLink && activeLink !== menuItem) {
+            closeSubMenu(activeLink, activeBlock, wrapper);
+            wrapper.classList.add('sublist-menu-open');
+            menuItem.classList.add('_active');
+            subMenu.classList.add('_active');
+            console.log(1);
+         } else if (menuItem === activeLink) {
+            closeSubMenu(activeLink, activeBlock, wrapper);
+            console.log(2);
+         } else {
+            wrapper.classList.add('sublist-menu-open');
+            menuItem.classList.add('_active');
+            subMenu.classList.add('_active');
+            console.log(3);
          }
-         document.documentElement.classList.add('sidebar-sub-catalog-open');
-         targetElement.classList.add('_sub-menu-active');
-         subMenu.classList.add('_sub-menu-open');
          e.preventDefault();
       } else {
-         const activeLink = document.querySelector('._sub-menu-active');
-         const activeBlock = document.querySelector('._sub-menu-open');
-
-
          if (activeLink) {
-            activeLink.classList.remove('_sub-menu-active');
-            activeBlock.classList.remove('_sub-menu-open');
-            document.documentElement.classList.remove('sidebar-sub-catalog-open');
+            closeSubMenu(activeLink, activeBlock, wrapper);
+            e.preventDefault();
          }
       }
    }
-   if (e.target.closest('.js-sidebar-catalog-back')) {
-      document.documentElement.classList.remove('sidebar-sub-catalog-open');
-      document.querySelector('._sub-menu-active') ? document.querySelector('._sub-menu-active').classList.remove('_sub-menu-active') : null;
-      document.querySelector('._sub-menu-open') ? document.querySelector('._sub-menu-open').classList.remove('_sub-menu-open') : null;
-      e.preventDefault();
+
+   if (backButton) {
+      closeSubMenu(activeLink, activeBlock, wrapper);
+   }
+
+   if (wrapper.classList.contains('catalog-menu-open') && !e.target.closest('.catalog-menu') && !openButton) {
+      wrapper.classList.remove('catalog-menu-open');
+      closeSubMenu(activeLink, activeBlock, wrapper);
    }
 }
+
+function closeSubMenu(activeLink, activeBlock, wrapper) {
+   wrapper.classList.remove('sublist-menu-open');
+   if (!activeLink && !activeBlock) {
+      return
+   }
+   activeLink.classList.remove('_active');
+   activeBlock.classList.remove('_active');
+}
+
+document.addEventListener("click", sidebarCatalogActions);
 
 //#endregion
 

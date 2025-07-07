@@ -1,14 +1,22 @@
-[data-showmore] {
-}
-[data-showmore-content] {
-}
+[data-showmore] {}
+
+[data-showmore-content] {}
+
 [data-showmore-button] {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 140%;
+	color: #525252;
+	border-bottom: 1px dashed #000;
+
 	span {
 		&:last-child {
 			display: none;
 		}
+
 		._showmore-active & {
 			display: none;
+
 			&:last-child {
 				display: block;
 			}

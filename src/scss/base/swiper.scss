@@ -1,5 +1,6 @@
 .swiper {
 	overflow: hidden;
+	position: relative;
 }
 
 .swiper-initialized {
@@ -43,4 +44,113 @@
 
 .swiper-button-lock {
 	display: none !important;
+}
+
+.swiper-pagination {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	position: absolute;
+	bottom: 18px;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+.swiper-pagination-bullet {
+	width: 13px;
+	height: 13px;
+	display: block;
+	border-radius: 100%;
+	background: rgba(255, 255, 255, 0.39);
+	border: 1px solid #575757;
+	position: relative;
+	cursor: pointer;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: 7px;
+		height: 7px;
+		border-radius: 100%;
+		background: #8a8a8a;
+		opacity: 0;
+	}
+
+	&.swiper-pagination-bullet-active {
+		&::before {
+			opacity: 1;
+		}
+	}
+}
+
+.swiper {
+
+	// .swiper__nav
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+}
+
+.swiper-button {
+	border-radius: 5px;
+	width: 118px;
+	height: 39px;
+	background: #e5e5e5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	svg {
+		width: 23px;
+		height: 15px;
+
+		use {
+			fill: #000;
+		}
+	}
+
+	&:hover {
+		background: var(--blue);
+
+		svg {
+			use {
+				fill: #d8d8d8;
+			}
+		}
+	}
+
+	// .swiper-button_prev
+
+	&_prev {
+		width: 63px;
+	}
+
+	// .swiper-button_next
+
+	&_next {
+		width: 119px;
+	}
+}
+
+.swiper-scrollbar {
+	height: 11px;
+	background: #e5e5e5;
+	border-radius: 44px;
+}
+
+.swiper-scrollbar-drag {
+	cursor: grab;
+	border-radius: 44px;
+	height: 100%;
+	background: var(--blue);
+
+	&:active {
+		cursor: grabbing;
+	}
 }

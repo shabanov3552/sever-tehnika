@@ -431,7 +431,6 @@ export function menuInit() {
 				bodyLockToggle();
 				document.documentElement.classList.toggle("menu-open");
 			}
-			console.log(bodyLockStatus);
 			if (e.target.closest('.js-close-mobile-menu')) {
 				bodyLockToggle();
 				document.documentElement.classList.toggle("menu-open");

@@ -1,21 +1,283 @@
 @use '../config/breakpoints' as bp;
 @use '../config/mixins' as mixin;
 @use '../config/functions' as func;
+
 //====================================================================================================
+.footer {
+   padding-top: func.rem(48);
+   padding-bottom: func.rem(31);
+
+   @media (max-width:bp.$xl) {
+      padding-bottom: func.rem(25);
+   }
+
+   // .footer__container
+
+   &__container {}
+
+   // .footer__main
+
+   &__main {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      margin-bottom: func.rem(44);
+
+      @media (max-width:bp.$xl) {
+         display: block;
+      }
+   }
+
+   // .footer__chunk
+
+   &__chunk {
+      background: rgba(217, 217, 217, 0.45);
+      border-radius: 25px;
+      padding: func.rem(45);
+
+
+      @media (min-width:bp.$md) {
+         &:first-child {
+            padding: func.rem(47) func.rem(82) func.rem(72) func.rem(51);
+
+            @media (max-width:bp.$xl) {
+               margin-bottom: func.rem(30);
+               padding-top: func.rem(29);
+               padding-bottom: func.rem(31);
+            }
+         }
+
+         &:last-child {
+            padding-left: func.rem(55);
+            padding-right: func.rem(63);
+
+            @media (max-width:bp.$xxl) {
+               padding-bottom: func.rem(30);
+            }
+         }
+      }
+
+      @media (max-width:bp.$md) {
+         padding: func.rem(35) func.rem(30);
+
+         &:first-child {
+            margin-bottom: func.rem(20);
+         }
+      }
+   }
+
+   // .footer__contacts
+
+   &__contacts {
+      @media (max-width:bp.$xl) {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 64px;
+      }
+
+      @media (max-width:bp.$lg) {
+         display: grid;
+         gap: 0;
+      }
+   }
+
+   // .footer__contact-item
+
+   &__contact-item {
+      &:not(:last-child) {
+         margin-bottom: func.rem(34);
+
+         @media (max-width:bp.$xl) {
+            margin-bottom: 0;
+         }
+
+         @media (max-width:bp.$lg) {
+            margin-bottom: func.rem(34);
+         }
+      }
+   }
+
+   // .footer__contact-label
+
+   &__contact-label {
+      font-size: 16px;
+      margin-bottom: func.rem(10);
+   }
+
+   // .footer__phone
+
+   &__phone {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 111%;
+      color: #000;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+   }
+
+   // .footer__phone-icon
+
+   &__phone-icon {
+      width: 12px;
+      height: 17px;
+      flex-shrink: 0;
+   }
+
+   // .footer__grid
+
+   &__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-between;
+      gap: 38px 30px;
+
+      @media (max-width:bp.$xxl) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width:bp.$xl) {
+         max-width: 703px;
+      }
+
+      @media (max-width:bp.$md) {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 30px;
+      }
+
+      @media (max-width:bp.$sm) {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   // .footer__column
+
+   &__column {
+      @media (min-width:bp.$xxl) {
+
+         &:nth-child(3),
+         &:nth-child(2) {
+            justify-self: center;
+         }
+      }
+   }
+
+   // .footer__col-title
+
+   &__col-title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 120%;
+      color: #000;
+      margin-bottom: func.rem(22);
+   }
+
+   // .footer__menu
+
+   &__menu {
+      display: grid;
+      gap: 15px;
+   }
+
+   // .footer__link
+
+   &__link {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 133%;
+      color: #000;
+   }
+
+   // .footer__opening-hours
+
+   &__opening-hours {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 110%;
+      color: #000;
+      display: grid;
+      gap: 15px;
+   }
+
+   // .footer__social
+
+   &__social {
+      justify-self: end;
+
+      @media (max-width:bp.$xxl) and (min-width:bp.$md) {
+         justify-self: start;
+         grid-column: 1/-1;
+         display: flex;
+         flex-wrap: wrap;
+
+         br {
+            display: none;
+         }
+      }
+
+      @media (max-width:bp.$md) {
+         justify-self: start;
+
+         br {
+            display: none;
+         }
+      }
+   }
+
+   // .footer__social-title
+
+   &__social-title {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 120%;
+      color: #000;
+      margin-bottom: func.rem(15);
+
+      @media (max-width:bp.$xxl) {
+         margin-bottom: 0;
+         margin-right: func.rem(33);
+      }
+
+      @media (max-width:bp.$md) {
+         margin-right: 0;
+         margin-bottom: func.rem(16);
+      }
+   }
+
+   // .footer__social-row
+
+   &__social-row {
+      display: flex;
+      gap: 27px;
+      align-items: center;
+   }
+
+   // .footer__social-link
+
+   &__social-link {}
+
+   // .footer__social-icon
+
+   &__social-icon {}
+}
 
 //====================================================================================================
 .copyright {
 
    // .copyright__wrapper
 
-   &__wrapper {}
+   &__wrapper {
+      @media (max-width:bp.$md) {
+         padding-left: func.rem(30);
+      }
+   }
 
    // .copyright__body
 
    &__body {
       display: grid;
       grid-template-columns: repeat(2, auto) 1fr auto;
-      column-gap: 50px;
+      column-gap: 70px;
       row-gap: 8px;
       justify-items: start;
 
@@ -30,14 +292,16 @@
 
       @media (max-width:bp.$md) {
          grid-template-columns: 1fr;
+         justify-items: start;
+         row-gap: 14px;
       }
    }
 
    // .copyright__item
 
    &__item {
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 15px;
+      line-height: 147%;
 
       @media (min-width:bp.$lg) {}
 
@@ -53,6 +317,10 @@
          text-align: center;
       }
 
+      @media (max-width:bp.$md) {
+         text-align: left;
+      }
+
       &:last-child {
          display: flex;
          align-items: center;
@@ -60,7 +328,7 @@
          color: #757575;
 
          @media (max-width:bp.$xl) and (min-width:bp.$lg) {
-            grid-row: 2/3;
+            grid-row: 1/2;
             grid-column: 3/4;
          }
       }
