@@ -1,0 +1,305 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.about {
+   margin-bottom: func.rem(101);
+
+   @media (max-width:bp.$xl) {
+      margin-bottom: func.rem(92);
+   }
+
+   @media (max-width:bp.$md) {
+      margin-bottom: 0;
+   }
+
+   // .about__first-block
+
+   &__first-block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 55px;
+      margin-bottom: func.rem(71);
+
+      @media (max-width:bp.$xl) {
+         display: block;
+         margin-bottom: func.rem(40);
+      }
+   }
+
+   // .about__image-ibg
+
+   &__image-ibg {
+      border-radius: 15px;
+      overflow: hidden;
+
+      @media (max-width:bp.$xl) {
+         max-width: 673px;
+         width: 100%;
+         height: 429px;
+         margin-bottom: func.rem(40);
+      }
+
+      @media (max-width:bp.$md) {
+         height: 213px;
+         margin-bottom: func.rem(28);
+      }
+   }
+
+   // .about__descr
+
+   &__descr {
+      @media (min-width:bp.$xl) {
+         padding: func.rem(50) 0;
+
+      }
+   }
+
+   // .about__text
+
+   &__text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #000;
+
+      p {
+         &:not(:last-child) {
+            margin-bottom: func.rem(35);
+         }
+      }
+   }
+
+   // .about__contacts
+
+   &__contacts {
+      margin-bottom: func.rem(87);
+
+      @media (max-width:bp.$xl) {
+         margin-bottom: func.rem(46);
+      }
+
+      @media (max-width:bp.$md) {
+         margin-bottom: func.rem(28);
+      }
+   }
+
+   // .about__contacts-title
+
+   &__contacts-title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 120%;
+      color: #000;
+      margin-bottom: func.rem(30);
+   }
+
+   // .about__contacts-row
+
+   &__contacts-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px 57px;
+
+      @media (max-width:bp.$xl) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width:bp.$md) {
+         grid-template-columns: 1fr;
+         gap: 10px;
+      }
+   }
+
+   // .about__contact-item
+
+   &__contact-item {
+      border: 1px solid #e5e5e5;
+      border-radius: 15px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 133%;
+      color: #8a8a8a;
+      position: relative;
+      height: 93px;
+      background: rgba(229, 229, 229, 0.35);
+      padding-left: func.rem(27);
+      padding-right: func.rem(42);
+      display: grid;
+      align-items: center;
+      position: relative;
+      align-content: center;
+
+      &:hover {
+         background: #0465ba;
+
+         .about__contact-icon use {
+            fill: #fff;
+         }
+
+         .about__contact-label {
+            color: #e5e5e5;
+         }
+
+         .about__contact-link {
+            color: #fff;
+         }
+      }
+   }
+
+   // .about__contact-icon
+
+   &__contact-icon {
+      width: 28px;
+      height: 28px;
+      position: absolute;
+      top: 13px;
+      right: 13px;
+
+      use {
+         fill: #8a8a8a;
+      }
+   }
+
+   // .about__contact-label
+
+   &__contact-label {
+      font-size: inherit;
+      font-weight: inherit;
+      color: #8a8a8a;
+   }
+
+   // .about__contact-link
+
+   &__contact-link {
+      font-size: inherit;
+      font-weight: inherit;
+      color: #000;
+
+      &::before {
+         content: '';
+         position: absolute;
+         inset: 0;
+      }
+   }
+
+   // .about__bottom-block
+
+   &__bottom-block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 55px;
+
+      @media (max-width:bp.$xl) {
+         display: block;
+      }
+   }
+
+   // .about__bottom-left
+
+   &__bottom-left {
+      @media (min-width:bp.$xl) {
+         padding-top: func.rem(10);
+      }
+
+      @media (max-width:bp.$xl) {
+         margin-bottom: func.rem(36);
+      }
+
+      .about__main-text {
+         max-width: 505px;
+         margin-bottom: func.rem(65);
+
+         @media (max-width:bp.$xl) {
+            max-width: 100%;
+            margin-bottom: func.rem(30);
+         }
+      }
+
+      .about__text {
+         max-width: 360px;
+
+         @media (max-width:bp.$xl) {
+            max-width: 100%;
+         }
+      }
+   }
+
+   // .about__main-text
+
+   &__main-text {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: #000;
+
+      span {
+         color: #0465ba;
+      }
+   }
+
+   // .about__bottom-right
+
+   &__bottom-right {
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      padding-top: func.rem(46);
+      padding-bottom: func.rem(28);
+      padding-left: func.rem(54);
+      padding-right: func.rem(40);
+
+      @media (max-width:bp.$xl) {
+         max-width: 673px;
+      }
+
+      @media (max-width:bp.$md) {
+         padding: func.rem(20);
+         padding-top: func.rem(25);
+
+      }
+   }
+
+   // .about__bottom-ibg
+
+   &__bottom-ibg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+   }
+
+   // .about__bottom-content
+
+   &__bottom-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+
+      .about__text {
+         color: #fff;
+      }
+
+      .about__main-text {
+         color: #fff;
+         margin-bottom: func.rem(13);
+      }
+   }
+
+   // .about__caption
+
+   &__caption {
+      margin-top: func.rem(81);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #fff;
+
+      a {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+}

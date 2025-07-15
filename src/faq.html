@@ -1,0 +1,59 @@
+@@include('html/_header.htm',{
+"title":"Вопросы и ответы",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page-title">Вопросы и ответы</div>
+
+      <div data-tabs class="faq">
+         <nav data-tabs-titles class="faq__navigation">
+            <button type="button" class="faq__title _tab-active">Работа с сайтом</button>
+            <button type="button" class="faq__title">Поиск и выбор товара</button>
+            <button type="button" class="faq__title">Оформление заказа</button>
+            <button type="button" class="faq__title">Скидки и промокоды</button>
+            <button type="button" class="faq__title">Отказ от заказа</button>
+            <button type="button" class="faq__title">Доставка товаров</button>
+         </nav>
+         <div data-tabs-body class="faq__content" data-spollers>
+
+            <div class="faq__body">
+               <div class="spollers__item">
+                  <button type="button" data-spoller class="spollers__title">Как заказать товар на сайте?</button>
+                  <div class="spollers__body">Дата предполагаемой доставки появится при нажатии кнопки "Оформить заказ" после заполнения и отправки анкеты. Если информация не отобразилась, сообщите нам, перейдя по ссылке "Отзывы" в правом нижнем углу экрана.</div>
+               </div>
+               <div class="spollers__item">
+                  <button type="button" data-spoller class="spollers__title">Могу ли я оформить кредит в интернет-магазине?</button>
+                  <div class="spollers__body">Дата предполагаемой доставки появится при нажатии кнопки "Оформить заказ" после заполнения и отправки анкеты. Если информация не отобразилась, сообщите нам, перейдя по ссылке "Отзывы" в правом нижнем углу экрана.</div>
+               </div>
+               <div class="spollers__item">
+                  <button type="button" data-spoller class="spollers__title">Какая ближайшая дата доставки?</button>
+                  <div class="spollers__body">Дата предполагаемой доставки появится при нажатии кнопки "Оформить заказ" после заполнения и отправки анкеты. Если информация не отобразилась, сообщите нам, перейдя по ссылке "Отзывы" в правом нижнем углу экрана.</div>
+               </div>
+            </div>
+
+            <div class="faq__body">
+               <div class="spollers__item">
+                  <button type="button" data-spoller class="spollers__title">Какие документы требуются для оформления возврата?</button>
+                  <div class="spollers__body">Дата предполагаемой доставки появится при нажатии кнопки "Оформить заказ" после заполнения и отправки анкеты. Если информация не отобразилась, сообщите нам, перейдя по ссылке "Отзывы" в правом нижнем углу экрана.</div>
+               </div>
+               <div class="spollers__item">
+                  <button type="button" data-spoller class="spollers__title">Какие товары я НЕ могу вернуть?</button>
+                  <div class="spollers__body">Дата предполагаемой доставки появится при нажатии кнопки "Оформить заказ" после заполнения и отправки анкеты. Если информация не отобразилась, сообщите нам, перейдя по ссылке "Отзывы" в правом нижнем углу экрана.</div>
+               </div>
+            </div>
+
+            <div class="faq__body">
+               <div class="spollers__item">
+                  <button type="button" data-spoller class="spollers__title">Какая ближайшая дата доставки?</button>
+                  <div class="spollers__body">Дата предполагаемой доставки появится при нажатии кнопки "Оформить заказ" после заполнения и отправки анкеты. Если информация не отобразилась, сообщите нам, перейдя по ссылке "Отзывы" в правом нижнем углу экрана.</div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      @@include('html/_page-form.htm',{})
+   </div>
+</main>
+@@include('html/_footer.htm',{})

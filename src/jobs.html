@@ -1,0 +1,155 @@
+@@include('html/_header.htm',{
+"title":"Вакансии",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page-title">Вакансии</div>
+      <div class="jobs">
+         <div class="jobs__image-ibg"><img src="@img/jobs.png" alt=""></div>
+         <div class="jobs__main-descr">
+            Присоединяйтесь к нашей команде и станьте частью успешной компании с более чем 20-летним опытом в продаже запчастей! Мы гордимся нашей уникальной клиентской базой, широким ассортиментом, индивидуальным подходом
+            к каждому клиенту и отлаженной логистикой.
+         </div>
+         <div class="jobs__advantages">
+            <div class="jobs__title">
+               Наши
+               преимущества
+            </div>
+            <div class="jobs__adv-grid">
+               <div class="jobs__adv-item">
+                  <div class="jobs__adv-icon"><img src="@img/icons/jobs__adv-icon-1.svg" alt=""></div>
+                  <div class="jobs__adv-text">
+                     Активный рост
+                     и развитие компании
+                  </div>
+               </div>
+               <div class="jobs__adv-item">
+                  <div class="jobs__adv-icon"><img src="@img/icons/jobs__adv-icon-2.svg" alt=""></div>
+                  <div class="jobs__adv-text">
+                     Своевременная
+                     и полная оплата труда
+                  </div>
+               </div>
+               <div class="jobs__adv-item">
+                  <div class="jobs__adv-icon"><img src="@img/icons/jobs__adv-icon-3.svg" alt=""></div>
+                  <div class="jobs__adv-text">
+                     Растущий объем
+                     лидов
+                  </div>
+               </div>
+               <div class="jobs__adv-item">
+                  <div class="jobs__adv-icon"><img src="@img/icons/jobs__adv-icon-4.svg" alt=""></div>
+                  <div class="jobs__adv-text">
+                     Стабильный
+                     и дружный коллектив
+                  </div>
+               </div>
+               <div class="jobs__adv-item">
+                  <div class="jobs__adv-icon"><img src="@img/icons/jobs__adv-icon-5.svg" alt=""></div>
+                  <div class="jobs__adv-text">
+                     Отсутствие бюрократии
+                     и долгих согласований
+                  </div>
+               </div>
+               <div class="jobs__adv-item">
+                  <div class="jobs__adv-icon"><img src="@img/icons/jobs__adv-icon-6.svg" alt=""></div>
+                  <div class="jobs__adv-text">
+                     Система адаптации
+                     и наставничества
+                  </div>
+               </div>
+               <div class="jobs__adv-item">
+                  <div class="jobs__adv-icon"><img src="@img/icons/jobs__adv-icon-7.svg" alt=""></div>
+                  <div class="jobs__adv-text">
+                     Четкая и системная работа,
+                     простая структура
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div data-spollers class="jobs__spollers spollers">
+
+            <div class="spollers__item">
+               <button type="button" data-spoller class="spollers__title">
+                  <div class="spollers__title-wrapper">
+                     <div class="spoller__name">Менеджер по продаже запчастей</div>
+                     <div class="spoller__experience">Опыт работы от: 3 лет</div>
+                  </div>
+               </button>
+               <div class="spollers__body">
+                  <div class="jobs__description">
+                     <h3>Обязанности:</h3>
+                     <p>
+                        Продажа запчастей и качественное консультирование покупателей
+                        Поиск запчастей по электронным каталогам
+                        Работа в 1С
+                     </p>
+                     <h3>Требования:</h3>
+                     <p>
+                        Опыт работы с мото- или автозапчастями не менее года
+                        Коммуникабельность и ответственность
+                        Приветствуется опыт работы на аналогичной должности и знание снегоходной, водно-моторной и ATV техники
+                        Приветствуется опыт работы в CRM
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+         <div class="jobs__form">
+            <div class="jobs__title">
+               Отправить резюме
+            </div>
+            <div class="form">
+               <div class="form__line">
+                  <label for="" class="form__label">Текст лейбла</label>
+                  <input id="" type="text" name="" class="form__input">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Телефон</label>
+                  <input required id="" type="tel" name="" class="form__input js_phone">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">E-mail</label>
+                  <input required id="" type="email" name="" class="form__input">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="file-upload js-file-upload">
+
+                  <label class="file-upload__label">
+                     <!-- data-max-files максимальное колличество файлов -->
+                     <!-- data-max-size общий максимальный размер файлов в Мб -->
+                     <input type="file" name="file" id="input-file" accept="" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
+                     <div class="file-upload__pseudo-input">
+                        <img src="@img/icons/file-upload-icon.svg" alt="">
+                        <span>Прикрепить файл</span>
+                     </div>
+                  </label>
+                  <div class="file-upload__preview"></div>
+               </div>
+               <div class="form__bottom">
+                  <button type="submit" class="form__button button-blue">Отправить</button>
+                  <div class="form__check">
+                     <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox">
+                        <span class="checkbox__chunk"></span>
+                        <span class="checkbox__text">Отправляя данные, я даю свое <a href="">согласие на обработку перс. данных</a></span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

@@ -149,6 +149,10 @@ textarea {
 		display: flex;
 		gap: 25px;
 		align-items: flex-start;
+
+		&:has(.form__link) {
+			flex-wrap: wrap;
+		}
 	}
 }
 

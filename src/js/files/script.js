@@ -42,6 +42,11 @@ document.addEventListener("click", function (e) {
       target.classList.contains('_spoller-active') ? target.innerHTML = 'Свернуть детали заказа' : target.innerHTML = 'Показать детали заказа';
       e.preventDefault()
    }
+
+   // спрятать/показать input в личкабе
+   if (e.target.closest('.js-edit')) {
+      changeData(e.target)
+   }
 });
 
 //#endregion
@@ -145,25 +150,26 @@ function txtarAutoHeight(target) {
 //#region спрятать/показать input в личкабе
 
 function changeData(target) {
-   let el = target.closest('.personal-data__row')
-   el.classList.add('_active');
-   let submitBtn = el.querySelector('.personal-data__btn')
-   submitBtn.addEventListener("click", function (e) {
-      el.classList.remove('_active');
-      el.classList.add('show-msg');
+   let fieldChunk = target.closest('.personal-info__field-chunk');
+   let confirmButton = fieldChunk.querySelector('.personal-info__confirm-btn');
+
+   fieldChunk.classList.add('edit-mode-active');
+   confirmButton.addEventListener("click", function (e) {
+      fieldChunk.classList.remove('edit-mode-active');
+      fieldChunk.classList.add('status-message-active');
       setTimeout(() => {
-         el.classList.remove('show-msg');
+         fieldChunk.classList.remove('status-message-active');
       }, 3000);
    });
-   document.addEventListener('keydown', function (e) {
-      if (e.code === 'Escape' || e.code === 'Enter' || e.code === 'NumpadEnter') {
-         el.classList.remove('_active');
-         el.classList.add('show-msg');
-         setTimeout(() => {
-            el.classList.remove('show-msg')
-         }, 3000);
-      }
-   });
+   // document.addEventListener('keydown', function (e) {
+   //    if (e.code === 'Escape' || e.code === 'Enter' || e.code === 'NumpadEnter') {
+   //       el.classList.remove('_active');
+   //       el.classList.add('show-msg');
+   //       setTimeout(() => {
+   //          el.classList.remove('show-msg')
+   //       }, 3000);
+   //    }
+   // });
 }
 
 //#endregion
@@ -479,5 +485,102 @@ function dropdownAction(e, ddWrapper, ddActive) {
       e.preventDefault();
    }
 }
+
+//#endregion
+
+//#region Загрузка файлов с превью
+
+class FileUploader {
+   constructor(element) {
+      this.fileUpload = element;
+      this.fileUploadInput = this.fileUpload.querySelector('.file-upload__input');
+      this.fileUploadText = this.fileUpload.querySelector('.file-upload__pseudo-input span');
+      this.fileUploadPreview = this.fileUpload.querySelector('.file-upload__preview');
+      this.maxFiles = +this.fileUploadInput.dataset.maxFiles;
+      this.maxSize = this.fileUploadInput.dataset.maxSize * 1024 * 1024;
+      this.fileList = [];
+
+      this.fileUploadInput.addEventListener('change', this.handleFilesChange.bind(this));
+      this.fileUploadPreview.addEventListener('click', this.handleFileDelete.bind(this));
+   }
+
+   handleFilesChange() {
+      Array.from(this.fileUploadInput.files).forEach(item => {
+         if (!this.fileList.some(obj => obj.name === item.name)) {
+            if (this.fileList.length >= this.maxFiles) {
+               this.setTextMessage(`Превышено количество файлов, максимум ${this.maxFiles}`);
+               return;
+            }
+
+            this.fileList.push(item);
+            const currentTotalSize = this.fileList.reduce((acc, file) => acc + file.size, 0);
+
+            if (currentTotalSize > this.maxSize) {
+               this.fileList.pop();
+               this.setTextMessage(`Превышен допустимый объем файлов, максимум ${this.fileUploadInput.dataset.maxSize} Мб`);
+               return;
+            }
+         }
+      });
+      this.updateFileInput();
+   }
+
+   handleFileDelete(e) {
+      const target = e.target;
+      if (target.closest('.file-upload__remove-preview')) {
+         const fileItem = target.closest('.file-upload__preview-item');
+         const fileName = fileItem.dataset.fileName;
+         this.fileList = this.fileList.filter(file => file.name !== fileName);
+         this.updateFileInput();
+      }
+   }
+
+   setTextMessage(message) {
+      this.fileUploadText.textContent = message;
+      setTimeout(() => {
+         this.fileUploadText.textContent = 'Прикрепить файл';
+      }, 5000);
+   }
+
+   renderFileList() {
+      this.fileUploadPreview.innerHTML = '';
+      this.fileList.forEach(file => {
+         this.fileUploadPreview.insertAdjacentElement('beforeend', this.createFilePreview(file));
+      });
+   }
+
+   createFilePreview(file) {
+      const filePreview = document.createElement('div');
+      filePreview.classList.add('file-upload__preview-item');
+      filePreview.dataset.fileName = file.name;
+      filePreview.insertAdjacentHTML('beforeend', `
+         <svg class="file-upload__remove-preview" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C3.6 16 0 12.4 0 8C0 3.6 3.6 0 8 0C12.4 0 16 3.6 16 8C16 12.4 12.4 16 8 16ZM12 4.95059L10.88 3.76471L8 6.81412L5.12 3.76471L4 4.95059L6.88 8L4 11.0494L5.12 12.2353L8 9.18588L10.88 12.2353L12 11.0494L9.12 8L12 4.95059Z" fill="#8A8A8A" />
+         </svg>
+      `);
+
+      if (file.type.includes('image')) {
+         const reader = new FileReader();
+         const img = document.createElement('img');
+         img.classList.add('file-upload__preview-image');
+         filePreview.insertAdjacentElement('afterbegin', img);
+         reader.onload = e => img.src = e.target.result;
+         reader.readAsDataURL(file);
+      } else {
+         filePreview.insertAdjacentHTML('afterbegin', `<span>${file.name}</span>`);
+         filePreview.classList.add('file-upload__preview-item_doc');
+      }
+      return filePreview;
+   }
+
+   updateFileInput() {
+      const dataTransfer = new DataTransfer();
+      this.fileList.forEach(file => dataTransfer.items.add(file));
+      this.fileUploadInput.files = dataTransfer.files;
+      this.renderFileList();
+   }
+}
+
+document.querySelectorAll('.js-file-upload').forEach(uploadElement => new FileUploader(uploadElement));
 
 //#endregion

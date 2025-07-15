@@ -1,0 +1,22 @@
+@@include('html/_header.htm',{
+"title":"Поиск",
+"modClass":"search-result-page"
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page-title">Результаты поиска «лобзик»: 0 товаров</div>
+
+      <div class="compare compare_empty">
+         <div class="compare__title">
+            <img src="@img/icons/compare-empty.svg" alt="">
+            <p>Сожалеем, ничего не найдено.</p>
+         </div>
+         <div class="compare__text">
+            Попробуйте переформулировать запрос
+         </div>
+         <a href="" class="compare__link button-blue">Вернуться на главную</a>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

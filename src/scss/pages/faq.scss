@@ -1,0 +1,78 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.faq {
+   display: grid;
+   grid-template-columns: 200px 1fr;
+   align-content: start;
+   align-items: start;
+   gap: 226px;
+   margin-bottom: func.rem(101);
+
+   @media (max-width:bp.$xxl) {
+      grid-template-columns: 186px 1fr;
+   }
+
+   @media (max-width:bp.$xl) {
+      gap: 40px;
+   }
+
+   @media (max-width:bp.$lg) {
+      grid-template-columns: 1fr;
+      margin-bottom: func.rem(48);
+   }
+
+   // .faq__navigation
+
+   &__navigation {
+      display: grid;
+      gap: 20px;
+      justify-content: start;
+      align-items: start;
+
+      @media (max-width:bp.$lg) {
+         display: flex;
+         flex-wrap: wrap;
+      }
+
+      @media (max-width:bp.$sm) {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
+
+   // .faq__title
+
+   &__title {
+      text-align: left;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 125%;
+      color: #0465ba;
+
+      &:hover {
+         color: #000;
+      }
+
+      // ._tab-active
+
+      &._tab-active {
+         color: #000;
+      }
+   }
+
+   // .faq__content
+
+   &__content {
+      @media (max-width:bp.$sm) {
+         margin-left: -10px;
+         margin-right: -10px;
+      }
+   }
+
+   // .faq__body
+
+   &__body {}
+}

@@ -1,0 +1,262 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.contacts {
+   @media (max-width:bp.$sm) {
+      margin-left: func.rem(-10);
+      margin-right: func.rem(-10);
+   }
+
+   // .contacts__grid
+
+   &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px 17px;
+      margin-bottom: func.rem(45);
+
+      @media (max-width:bp.$lg) {
+         grid-template-columns: 1fr;
+      }
+
+   }
+
+   // .contacts__section
+
+   &__section {
+      padding-top: func.rem(41);
+      padding-left: func.rem(51);
+      padding-bottom: func.rem(47);
+      padding-right: func.rem(51);
+
+      @media (min-width:bp.$lg) {
+         &:has(.contacts__social) {
+            padding-left: func.rem(84);
+         }
+      }
+
+      @media (min-width:bp.$xl) {
+         &:has(.contacts__requisites) {
+            padding-left: func.rem(84);
+         }
+      }
+
+      @media (max-width:bp.$xl) {
+         padding-left: 0;
+      }
+
+      @media (max-width:bp.$sm) {
+         padding: func.rem(0) func.rem(20);
+      }
+
+      // .contacts__section_background
+
+      &_background {
+         background: #ededed;
+         border-radius: 44px;
+
+         @media (max-width:bp.$xl) {
+            padding-left: func.rem(40);
+         }
+
+         @media (max-width:bp.$sm) {
+            padding: func.rem(40) func.rem(20);
+            border-radius: 14px;
+         }
+      }
+   }
+
+   // .contacts__title
+
+   &__title {
+      font-weight: 500;
+      font-size: 20px;
+      color: #000;
+      margin-bottom: func.rem(39);
+   }
+
+   // .contacts__list
+
+   &__list {}
+
+   // .contacts__item
+
+   &__item {
+      display: grid;
+      grid-template-columns: 23px 1fr;
+      gap: 18px;
+
+      &:not(:last-child) {
+         margin-bottom: func.rem(44);
+
+         @media (max-width:bp.$md) {
+            margin-bottom: func.rem(38);
+         }
+      }
+   }
+
+   // .contacts__icon
+
+   &__icon {
+      justify-self: center;
+   }
+
+   // .contacts__item-inner
+
+   &__item-inner {}
+
+   // .contacts__label
+
+   &__label {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 125%;
+      color: #000;
+      margin-bottom: func.rem(18);
+      padding-top: func.rem(2);
+   }
+
+   // .contacts__link
+
+   &__link {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      color: #000;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+
+   // .contacts__text
+
+   &__text {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      color: #000;
+   }
+
+   // .contacts__requisites
+
+   &__requisites {}
+
+   // .contacts__requisites-title
+
+   &__requisites-title {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 110%;
+      color: #000;
+      max-width: 484px;
+      margin-bottom: func.rem(25);
+   }
+
+   // .contacts__requisites-list
+
+   &__requisites-list {
+      margin-bottom: func.rem(37);
+   }
+
+   // .contacts__requisites-row
+
+   &__requisites-row {
+      display: grid;
+      grid-template-columns: 51px 1fr;
+      gap: 18px;
+
+      &:not(:last-child) {
+         margin-bottom: func.rem(13);
+      }
+   }
+
+   // .contacts__requisites-name
+
+   &__requisites-name {
+      font-weight: 300;
+      font-size: 20px;
+      color: #000;
+   }
+
+   // .contacts__requisites-value
+
+   &__requisites-value {
+      font-weight: 500;
+      font-size: 20px;
+      color: #000;
+   }
+
+   // .contacts__requisites-link
+
+   &__requisites-link {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+         .contacts__requisites-label {
+            text-decoration: underline;
+         }
+      }
+
+      img {
+         width: 20px;
+         height: 21px;
+         display: inline-block;
+      }
+   }
+
+   // .contacts__requisites-label
+
+   &__requisites-label {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #000;
+      margin-left: func.rem(12);
+      margin-right: func.rem(25);
+   }
+
+   // .contacts__requisites-type
+
+   &__requisites-type {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 157%;
+      color: #858585;
+   }
+
+   // .contacts__social
+
+   &__social {}
+
+   // .contacts__social-link
+
+   &__social-link {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      &:not(:last-child) {
+         margin-bottom: func.rem(32);
+      }
+   }
+
+   // .contacts__social-icon
+
+   &__social-icon {}
+
+   // .contacts__map
+
+   &__map {
+      height: 678px;
+      border-radius: 44px;
+      overflow: hidden;
+
+      @media (max-width:bp.$sm) {
+         height: 496px;
+      }
+   }
+}

@@ -1,0 +1,274 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.jobs {
+   margin-bottom: func.rem(72);
+   // .jobs__image-ibg
+
+   &__image-ibg {
+      height: 172px;
+      overflow: hidden;
+      border-radius: 15px;
+      margin-bottom: func.rem(52);
+
+      @media (max-width:bp.$lg) {
+         margin-bottom: func.rem(40);
+      }
+   }
+
+   // .jobs__main-descr
+
+   &__main-descr {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 150%;
+      color: #000;
+      margin-bottom: func.rem(58);
+
+      @media (max-width:bp.$lg) {
+         margin-bottom: func.rem(40);
+      }
+   }
+
+   // .jobs__advantages
+
+   &__advantages {
+      padding: func.rem(48) func.rem(55);
+      background: #ededed;
+      border-radius: 15px;
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 140px;
+      margin-bottom: func.rem(80);
+
+      @media (max-width:bp.$xl) {
+         grid-template-columns: 1fr;
+         gap: 55px;
+
+         .jobs__title {
+            max-width: 190px;
+         }
+      }
+
+      @media (max-width:bp.$md) {
+         padding: func.rem(30) func.rem(20);
+      }
+   }
+
+   // .jobs__title
+
+   &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 121%;
+      color: #000;
+   }
+
+   // .jobs__adv-grid
+
+   &__adv-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 84px 55px;
+
+      @media (max-width:bp.$xl) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width:bp.$lg) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width:bp.$md) {
+         grid-template-columns: 1fr;
+         gap: 34px;
+      }
+   }
+
+   // .jobs__adv-item
+
+   &__adv-item {
+      display: grid;
+      gap: 16px;
+   }
+
+   // .jobs__adv-icon
+
+   &__adv-icon {}
+
+   // .jobs__adv-text
+
+   &__adv-text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 122%;
+      color: #000;
+   }
+
+   // .jobs__spollers
+
+   &__spollers {
+      margin-bottom: func.rem(45);
+   }
+
+   // .jobs__description
+
+   &__description {}
+
+   // .jobs__form
+
+   &__form {
+      background: #ededed;
+      border-radius: 15px;
+      padding: func.rem(55);
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 167px;
+
+      @media (max-width:bp.$xl) {
+         gap: 95px;
+      }
+
+      @media (max-width:bp.$lg) {
+         grid-template-columns: 1fr;
+         gap: 25px;
+      }
+
+      @media (max-width:bp.$md) {
+         padding: func.rem(30) func.rem(20);
+      }
+
+      @media (max-width:bp.$sm) {
+         margin-left: func.rem(-10);
+         margin-right: func.rem(-10);
+      }
+
+      .form {
+         max-width: 493px;
+      }
+   }
+}
+
+.spollers {
+
+   // .spollers__item
+
+   &__item {}
+
+   // .spollers__title
+
+   &__title {}
+
+   // .spollers__title-wrapper
+
+   &__title-wrapper {}
+
+   // .spollers__body
+
+   &__body {}
+}
+
+.spoller {
+
+   // .spoller__name
+
+   &__name {}
+
+   // .spoller__experience
+
+   &__experience {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 169%;
+      color: #000;
+      margin-top: func.rem(5);
+   }
+}
+
+.form {
+
+   // .form__line
+
+   &__line {}
+
+   // .form__label
+
+   &__label {}
+
+   // .form__input
+
+   &__input {}
+
+   // .form__clear-svg
+
+   &__clear-svg {}
+
+   // .form__bottom
+
+   &__bottom {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+
+      @media (max-width:bp.$sm) {
+         flex-direction: column;
+         gap: 10px;
+      }
+   }
+
+   // .form__button
+
+   &__button {}
+
+   // .form__check
+
+   &__check {
+      .checkbox {
+
+         // .checkbox__input
+
+         &__input {}
+
+         // .checkbox__chunk
+
+         &__chunk {
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+         }
+
+         // .checkbox__text
+
+         &__text {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+            color: #000;
+            opacity: 0.5;
+         }
+      }
+   }
+}
+
+
+
+.file-upload {
+
+   // .file-upload__label
+
+   &__label {}
+
+   // .file-upload__input
+
+   &__input {}
+
+   // .file-upload__pseudo-input
+
+   &__pseudo-input {}
+
+   // .file-upload__preview
+
+   &__preview {}
+}

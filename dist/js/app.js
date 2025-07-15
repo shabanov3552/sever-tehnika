@@ -6673,7 +6673,7 @@
         rangesSlidersFilters.forEach((range => {
             rangeInit(range);
         }));
-        function ssr_window_esm_isObject(obj) {
+        function isObject(obj) {
             return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
         }
         function extend(target, src) {
@@ -6681,7 +6681,7 @@
             if (src === void 0) src = {};
             const noExtend = [ "__proto__", "constructor", "prototype" ];
             Object.keys(src).filter((key => noExtend.indexOf(key) < 0)).forEach((key => {
-                if (typeof target[key] === "undefined") target[key] = src[key]; else if (ssr_window_esm_isObject(src[key]) && ssr_window_esm_isObject(target[key]) && Object.keys(src[key]).length > 0) extend(target[key], src[key]);
+                if (typeof target[key] === "undefined") target[key] = src[key]; else if (isObject(src[key]) && isObject(target[key]) && Object.keys(src[key]).length > 0) extend(target[key], src[key]);
             }));
         }
         const ssrDocument = {
@@ -10691,8 +10691,156 @@
                 resume
             });
         }
+        function Thumb(_ref) {
+            let {swiper, extendParams, on} = _ref;
+            extendParams({
+                thumbs: {
+                    swiper: null,
+                    multipleActiveThumbs: true,
+                    autoScrollOffset: 0,
+                    slideThumbActiveClass: "swiper-slide-thumb-active",
+                    thumbsContainerClass: "swiper-thumbs"
+                }
+            });
+            let initialized = false;
+            let swiperCreated = false;
+            swiper.thumbs = {
+                swiper: null
+            };
+            function onThumbClick() {
+                const thumbsSwiper = swiper.thumbs.swiper;
+                if (!thumbsSwiper || thumbsSwiper.destroyed) return;
+                const clickedIndex = thumbsSwiper.clickedIndex;
+                const clickedSlide = thumbsSwiper.clickedSlide;
+                if (clickedSlide && clickedSlide.classList.contains(swiper.params.thumbs.slideThumbActiveClass)) return;
+                if (typeof clickedIndex === "undefined" || clickedIndex === null) return;
+                let slideToIndex;
+                if (thumbsSwiper.params.loop) slideToIndex = parseInt(thumbsSwiper.clickedSlide.getAttribute("data-swiper-slide-index"), 10); else slideToIndex = clickedIndex;
+                if (swiper.params.loop) swiper.slideToLoop(slideToIndex); else swiper.slideTo(slideToIndex);
+            }
+            function init() {
+                const {thumbs: thumbsParams} = swiper.params;
+                if (initialized) return false;
+                initialized = true;
+                const SwiperClass = swiper.constructor;
+                if (thumbsParams.swiper instanceof SwiperClass) {
+                    if (thumbsParams.swiper.destroyed) {
+                        initialized = false;
+                        return false;
+                    }
+                    swiper.thumbs.swiper = thumbsParams.swiper;
+                    Object.assign(swiper.thumbs.swiper.originalParams, {
+                        watchSlidesProgress: true,
+                        slideToClickedSlide: false
+                    });
+                    Object.assign(swiper.thumbs.swiper.params, {
+                        watchSlidesProgress: true,
+                        slideToClickedSlide: false
+                    });
+                    swiper.thumbs.swiper.update();
+                } else if (utils_isObject(thumbsParams.swiper)) {
+                    const thumbsSwiperParams = Object.assign({}, thumbsParams.swiper);
+                    Object.assign(thumbsSwiperParams, {
+                        watchSlidesProgress: true,
+                        slideToClickedSlide: false
+                    });
+                    swiper.thumbs.swiper = new SwiperClass(thumbsSwiperParams);
+                    swiperCreated = true;
+                }
+                swiper.thumbs.swiper.el.classList.add(swiper.params.thumbs.thumbsContainerClass);
+                swiper.thumbs.swiper.on("tap", onThumbClick);
+                return true;
+            }
+            function update(initial) {
+                const thumbsSwiper = swiper.thumbs.swiper;
+                if (!thumbsSwiper || thumbsSwiper.destroyed) return;
+                const slidesPerView = thumbsSwiper.params.slidesPerView === "auto" ? thumbsSwiper.slidesPerViewDynamic() : thumbsSwiper.params.slidesPerView;
+                let thumbsToActivate = 1;
+                const thumbActiveClass = swiper.params.thumbs.slideThumbActiveClass;
+                if (swiper.params.slidesPerView > 1 && !swiper.params.centeredSlides) thumbsToActivate = swiper.params.slidesPerView;
+                if (!swiper.params.thumbs.multipleActiveThumbs) thumbsToActivate = 1;
+                thumbsToActivate = Math.floor(thumbsToActivate);
+                thumbsSwiper.slides.forEach((slideEl => slideEl.classList.remove(thumbActiveClass)));
+                if (thumbsSwiper.params.loop || thumbsSwiper.params.virtual && thumbsSwiper.params.virtual.enabled) for (let i = 0; i < thumbsToActivate; i += 1) utils_elementChildren(thumbsSwiper.slidesEl, `[data-swiper-slide-index="${swiper.realIndex + i}"]`).forEach((slideEl => {
+                    slideEl.classList.add(thumbActiveClass);
+                })); else for (let i = 0; i < thumbsToActivate; i += 1) if (thumbsSwiper.slides[swiper.realIndex + i]) thumbsSwiper.slides[swiper.realIndex + i].classList.add(thumbActiveClass);
+                const autoScrollOffset = swiper.params.thumbs.autoScrollOffset;
+                const useOffset = autoScrollOffset && !thumbsSwiper.params.loop;
+                if (swiper.realIndex !== thumbsSwiper.realIndex || useOffset) {
+                    const currentThumbsIndex = thumbsSwiper.activeIndex;
+                    let newThumbsIndex;
+                    let direction;
+                    if (thumbsSwiper.params.loop) {
+                        const newThumbsSlide = thumbsSwiper.slides.find((slideEl => slideEl.getAttribute("data-swiper-slide-index") === `${swiper.realIndex}`));
+                        newThumbsIndex = thumbsSwiper.slides.indexOf(newThumbsSlide);
+                        direction = swiper.activeIndex > swiper.previousIndex ? "next" : "prev";
+                    } else {
+                        newThumbsIndex = swiper.realIndex;
+                        direction = newThumbsIndex > swiper.previousIndex ? "next" : "prev";
+                    }
+                    if (useOffset) newThumbsIndex += direction === "next" ? autoScrollOffset : -1 * autoScrollOffset;
+                    if (thumbsSwiper.visibleSlidesIndexes && thumbsSwiper.visibleSlidesIndexes.indexOf(newThumbsIndex) < 0) {
+                        if (thumbsSwiper.params.centeredSlides) if (newThumbsIndex > currentThumbsIndex) newThumbsIndex = newThumbsIndex - Math.floor(slidesPerView / 2) + 1; else newThumbsIndex = newThumbsIndex + Math.floor(slidesPerView / 2) - 1; else if (newThumbsIndex > currentThumbsIndex && thumbsSwiper.params.slidesPerGroup === 1) ;
+                        thumbsSwiper.slideTo(newThumbsIndex, initial ? 0 : void 0);
+                    }
+                }
+            }
+            on("beforeInit", (() => {
+                const {thumbs} = swiper.params;
+                if (!thumbs || !thumbs.swiper) return;
+                if (typeof thumbs.swiper === "string" || thumbs.swiper instanceof HTMLElement) {
+                    const document = ssr_window_esm_getDocument();
+                    const getThumbsElementAndInit = () => {
+                        const thumbsElement = typeof thumbs.swiper === "string" ? document.querySelector(thumbs.swiper) : thumbs.swiper;
+                        if (thumbsElement && thumbsElement.swiper) {
+                            thumbs.swiper = thumbsElement.swiper;
+                            init();
+                            update(true);
+                        } else if (thumbsElement) {
+                            const eventName = `${swiper.params.eventsPrefix}init`;
+                            const onThumbsSwiper = e => {
+                                thumbs.swiper = e.detail[0];
+                                thumbsElement.removeEventListener(eventName, onThumbsSwiper);
+                                init();
+                                update(true);
+                                thumbs.swiper.update();
+                                swiper.update();
+                            };
+                            thumbsElement.addEventListener(eventName, onThumbsSwiper);
+                        }
+                        return thumbsElement;
+                    };
+                    const watchForThumbsToAppear = () => {
+                        if (swiper.destroyed) return;
+                        const thumbsElement = getThumbsElementAndInit();
+                        if (!thumbsElement) requestAnimationFrame(watchForThumbsToAppear);
+                    };
+                    requestAnimationFrame(watchForThumbsToAppear);
+                } else {
+                    init();
+                    update(true);
+                }
+            }));
+            on("slideChange update resize observerUpdate", (() => {
+                update();
+            }));
+            on("setTransition", ((_s, duration) => {
+                const thumbsSwiper = swiper.thumbs.swiper;
+                if (!thumbsSwiper || thumbsSwiper.destroyed) return;
+                thumbsSwiper.setTransition(duration);
+            }));
+            on("beforeDestroy", (() => {
+                const thumbsSwiper = swiper.thumbs.swiper;
+                if (!thumbsSwiper || thumbsSwiper.destroyed) return;
+                if (swiperCreated) thumbsSwiper.destroy();
+            }));
+            Object.assign(swiper.thumbs, {
+                init,
+                update
+            });
+        }
         function initSliders() {
-            if (document.querySelector(".node")) new swiper_core_Swiper(".node", {
+            if (document.querySelector(".class")) new swiper_core_Swiper(".class", {
                 modules: [ Navigation ],
                 observer: true,
                 observeParents: true,
@@ -10760,33 +10908,44 @@
                     }
                 }
             });
-            if (document.querySelector(".products__slider")) new swiper_core_Swiper(".products__slider", {
-                modules: [ Navigation ],
-                observer: true,
-                observeParents: true,
-                slidesPerView: 4,
-                spaceBetween: 35,
-                speed: 800,
-                navigation: {
-                    prevEl: ".swiper-button_prev",
-                    nextEl: ".swiper-button_next"
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: "auto",
-                        spaceBetween: 30
+            if (document.querySelector(".products__slider")) {
+                let swiper = new swiper_core_Swiper(".products__slider", {
+                    modules: [ Navigation ],
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: 4,
+                    spaceBetween: 35,
+                    speed: 800,
+                    navigation: {
+                        prevEl: ".swiper-button_prev",
+                        nextEl: ".swiper-button_next"
                     },
-                    991.98: {
-                        slidesPerView: 3,
-                        spaceBetween: 20
+                    breakpoints: {
+                        320: {
+                            slidesPerView: "auto",
+                            spaceBetween: 30
+                        },
+                        991.98: {
+                            slidesPerView: 3,
+                            spaceBetween: 20
+                        },
+                        1399.98: {
+                            slidesPerView: 4,
+                            spaceBetween: 30
+                        }
                     },
-                    1399.98: {
-                        slidesPerView: 4,
-                        spaceBetween: 30
+                    on: {}
+                });
+                function moveElement(slider) {
+                    if (slider.el.closest(".product-detail-slider")) {
+                        const parrentBlockHeader = slider.el.closest(".product-detail-slider").querySelector(".product-detail-slider__header");
+                        parrentBlockHeader.append(slider.el.querySelector(".swiper__nav"));
                     }
-                },
-                on: {}
-            });
+                }
+                if (swiper.length > 0) swiper.forEach((slider => {
+                    moveElement(slider);
+                })); else moveElement(swiper);
+            }
             if (document.querySelector(".catalog-preview__slider")) new swiper_core_Swiper(".catalog-preview__slider", {
                 modules: [ Pagination, Autoplay ],
                 observer: true,
@@ -10803,6 +10962,34 @@
                     clickable: true
                 }
             });
+            if (document.querySelector(".product-detail__gallery-main")) {
+                var swiperThumbs = new swiper_core_Swiper(".product-detail__gallery-thumbs", {
+                    spaceBetween: 25,
+                    slidesPerView: "auto",
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                    direction: "vertical",
+                    breakpoints: {
+                        320: {
+                            direction: "horizontal"
+                        },
+                        1199.98: {
+                            direction: "vertical"
+                        }
+                    }
+                });
+                new swiper_core_Swiper(".product-detail__gallery-main", {
+                    modules: [ Navigation, Thumb ],
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: ".product-detail__gallery-nav .swiper-button_next",
+                        prevEl: ".product-detail__gallery-nav .swiper-button_prev"
+                    },
+                    thumbs: {
+                        swiper: swiperThumbs
+                    }
+                });
+            }
         }
         window.addEventListener("load", (function(e) {
             initSliders();
@@ -14016,6 +14203,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 target.classList.contains("_spoller-active") ? target.innerHTML = "Свернуть детали заказа" : target.innerHTML = "Показать детали заказа";
                 e.preventDefault();
             }
+            if (e.target.closest(".js-edit")) changeData(e.target);
         }));
         const filtersPopup = document.querySelector("#filters-more");
         if (filtersPopup) {
@@ -14080,24 +14268,15 @@ PERFORMANCE OF THIS SOFTWARE.
             }
         }
         function changeData(target) {
-            let el = target.closest(".personal-data__row");
-            el.classList.add("_active");
-            let submitBtn = el.querySelector(".personal-data__btn");
-            submitBtn.addEventListener("click", (function(e) {
-                el.classList.remove("_active");
-                el.classList.add("show-msg");
+            let fieldChunk = target.closest(".personal-info__field-chunk");
+            let confirmButton = fieldChunk.querySelector(".personal-info__confirm-btn");
+            fieldChunk.classList.add("edit-mode-active");
+            confirmButton.addEventListener("click", (function(e) {
+                fieldChunk.classList.remove("edit-mode-active");
+                fieldChunk.classList.add("status-message-active");
                 setTimeout((() => {
-                    el.classList.remove("show-msg");
+                    fieldChunk.classList.remove("status-message-active");
                 }), 3e3);
-            }));
-            document.addEventListener("keydown", (function(e) {
-                if (e.code === "Escape" || e.code === "Enter" || e.code === "NumpadEnter") {
-                    el.classList.remove("_active");
-                    el.classList.add("show-msg");
-                    setTimeout((() => {
-                        el.classList.remove("show-msg");
-                    }), 3e3);
-                }
             }));
         }
         window.addEventListener("load", (function(e) {
@@ -14290,6 +14469,83 @@ PERFORMANCE OF THIS SOFTWARE.
                 e.preventDefault();
             }
         }
+        class FileUploader {
+            constructor(element) {
+                this.fileUpload = element;
+                this.fileUploadInput = this.fileUpload.querySelector(".file-upload__input");
+                this.fileUploadText = this.fileUpload.querySelector(".file-upload__pseudo-input span");
+                this.fileUploadPreview = this.fileUpload.querySelector(".file-upload__preview");
+                this.maxFiles = +this.fileUploadInput.dataset.maxFiles;
+                this.maxSize = this.fileUploadInput.dataset.maxSize * 1024 * 1024;
+                this.fileList = [];
+                this.fileUploadInput.addEventListener("change", this.handleFilesChange.bind(this));
+                this.fileUploadPreview.addEventListener("click", this.handleFileDelete.bind(this));
+            }
+            handleFilesChange() {
+                Array.from(this.fileUploadInput.files).forEach((item => {
+                    if (!this.fileList.some((obj => obj.name === item.name))) {
+                        if (this.fileList.length >= this.maxFiles) {
+                            this.setTextMessage(`Превышено количество файлов, максимум ${this.maxFiles}`);
+                            return;
+                        }
+                        this.fileList.push(item);
+                        const currentTotalSize = this.fileList.reduce(((acc, file) => acc + file.size), 0);
+                        if (currentTotalSize > this.maxSize) {
+                            this.fileList.pop();
+                            this.setTextMessage(`Превышен допустимый объем файлов, максимум ${this.fileUploadInput.dataset.maxSize} Мб`);
+                            return;
+                        }
+                    }
+                }));
+                this.updateFileInput();
+            }
+            handleFileDelete(e) {
+                const target = e.target;
+                if (target.closest(".file-upload__remove-preview")) {
+                    const fileItem = target.closest(".file-upload__preview-item");
+                    const fileName = fileItem.dataset.fileName;
+                    this.fileList = this.fileList.filter((file => file.name !== fileName));
+                    this.updateFileInput();
+                }
+            }
+            setTextMessage(message) {
+                this.fileUploadText.textContent = message;
+                setTimeout((() => {
+                    this.fileUploadText.textContent = "Прикрепить файл";
+                }), 5e3);
+            }
+            renderFileList() {
+                this.fileUploadPreview.innerHTML = "";
+                this.fileList.forEach((file => {
+                    this.fileUploadPreview.insertAdjacentElement("beforeend", this.createFilePreview(file));
+                }));
+            }
+            createFilePreview(file) {
+                const filePreview = document.createElement("div");
+                filePreview.classList.add("file-upload__preview-item");
+                filePreview.dataset.fileName = file.name;
+                filePreview.insertAdjacentHTML("beforeend", `\n         <svg class="file-upload__remove-preview" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C3.6 16 0 12.4 0 8C0 3.6 3.6 0 8 0C12.4 0 16 3.6 16 8C16 12.4 12.4 16 8 16ZM12 4.95059L10.88 3.76471L8 6.81412L5.12 3.76471L4 4.95059L6.88 8L4 11.0494L5.12 12.2353L8 9.18588L10.88 12.2353L12 11.0494L9.12 8L12 4.95059Z" fill="#8A8A8A" />\n         </svg>\n      `);
+                if (file.type.includes("image")) {
+                    const reader = new FileReader;
+                    const img = document.createElement("img");
+                    img.classList.add("file-upload__preview-image");
+                    filePreview.insertAdjacentElement("afterbegin", img);
+                    reader.onload = e => img.src = e.target.result;
+                    reader.readAsDataURL(file);
+                } else {
+                    filePreview.insertAdjacentHTML("afterbegin", `<span>${file.name}</span>`);
+                    filePreview.classList.add("file-upload__preview-item_doc");
+                }
+                return filePreview;
+            }
+            updateFileInput() {
+                const dataTransfer = new DataTransfer;
+                this.fileList.forEach((file => dataTransfer.items.add(file)));
+                this.fileUploadInput.files = dataTransfer.files;
+                this.renderFileList();
+            }
+        }
+        document.querySelectorAll(".js-file-upload").forEach((uploadElement => new FileUploader(uploadElement)));
         window["FLS"] = true;
         isWebp();
         menuInit();

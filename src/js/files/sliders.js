@@ -8,7 +8,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, Scrollbar } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, Scrollbar, Thumbs } from 'swiper/modules';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -28,9 +28,9 @@ EffectFade, Lazy, Manipulation
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.node')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.class')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.node', { // Указываем скласс нужного слайдера
+		new Swiper('.class', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation],
@@ -251,7 +251,7 @@ function initSliders() {
 
 	if (document.querySelector('.products__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.products__slider', { // Указываем скласс нужного слайдера
+		let swiper = new Swiper('.products__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation],
@@ -321,6 +321,22 @@ function initSliders() {
 
 			}
 		});
+
+		function moveElement(slider) {
+			if (slider.el.closest('.product-detail-slider')) {
+				const parrentBlockHeader = slider.el.closest('.product-detail-slider').querySelector('.product-detail-slider__header');
+
+				parrentBlockHeader.append(slider.el.querySelector('.swiper__nav'))
+			}
+		}
+
+		if (swiper.length > 0) {
+			swiper.forEach(slider => {
+				moveElement(slider)
+			})
+		} else {
+			moveElement(swiper)
+		}
 	}
 
 	if (document.querySelector('.catalog-preview__slider')) { // Указываем скласс нужного слайдера
@@ -399,6 +415,37 @@ function initSliders() {
 			// on: {
 
 			// }
+		});
+	}
+
+	if (document.querySelector('.product-detail__gallery-main')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		var swiperThumbs = new Swiper(".product-detail__gallery-thumbs", {
+			spaceBetween: 25,
+			slidesPerView: 'auto',
+			freeMode: true,
+			watchSlidesProgress: true,
+			direction: 'vertical',
+			breakpoints: {
+				320: {
+					direction: 'horizontal',
+				},
+				1199.98: {
+					direction: 'vertical',
+				}
+			}
+		});
+
+		var swiper2 = new Swiper(".product-detail__gallery-main", {
+			modules: [Navigation, Thumbs],
+			spaceBetween: 20,
+			navigation: {
+				nextEl: ".product-detail__gallery-nav .swiper-button_next",
+				prevEl: ".product-detail__gallery-nav .swiper-button_prev",
+			},
+			thumbs: {
+				swiper: swiperThumbs,
+			},
 		});
 	}
 }

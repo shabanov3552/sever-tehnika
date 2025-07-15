@@ -1,0 +1,67 @@
+@@include('html/_header.htm',{
+"title":"Блог",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page-title">Блог</div>
+
+      <div class="categories-block">
+
+         <div class="categories-block__grid">
+            <a href="" class="categories-block__link _active">Все</a>
+            <a href="" class="categories-block__link">Выбор запчастей</a>
+            <a href="" class="categories-block__link">Двигатель</a>
+            <a href="" class="categories-block__link">Свечи зажигания</a>
+            <a href="" class="categories-block__link">Система зажигания</a>
+            <a href="" class="categories-block__link">Подборки</a>
+            <a href="" class="categories-block__link">Обзоры</a>
+            <a href="" class="categories-block__link">Масла Motul</a>
+            <a href="" class="categories-block__link">Русская Механика</a>
+            <a href="" class="categories-block__link">Бренды</a>
+         </div>
+
+      </div>
+      <div class="blog">
+
+         <div class="blog__grid">
+            <div class="blog__item blog__item_first">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Обзор лучших снегоходов от Русской Механики: четыре самых интересных модели</a>
+               <div class="blog__descr">«Русская Механика» — это самый популярный и крупный российский производитель снегоходов.</div>
+               <div class="blog__image-ibg"><img src="@img/blog-1.png" alt=""></div>
+            </div>
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Всё про систему зажигания в автомобиле </a>
+               <div class="blog__descr">Основная задача системы зажигания в бензиновом моторе – передача искры на свечи зажигания в нужный рабочий такт</div>
+               <div class="blog__image-ibg"><img src="@img/blog-2.png" alt=""></div>
+            </div>
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Сравнение популярных снегоходов Ski-Doo: Expedition, Summit и Scandic</a>
+               <div class="blog__descr">Компания Ski-Doo известна своим инновационным подходом к созданию снегоходов, которые подходят </div>
+               <div class="blog__image-ibg"><img src="@img/blog-3.png" alt=""></div>
+            </div>
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Различия автомобильных моторных масел MOTUL</a>
+               <div class="blog__descr">Подбирая масло для своего автомобиля или мотоцикла, вы сталкиваетесь с выбором</div>
+               <div class="blog__image-ibg"><img src="@img/blog-4.png" alt=""></div>
+            </div>
+            <div class="blog__item">
+               <div class="blog__date">04.03.2025</div>
+               <a href="" class="blog__title">Как покупать новые запчасти и расходные материалы для квадроциклов</a>
+               <div class="blog__descr">Если купить запчасти самому и сделать в сервисе только работы, можно прилично сэкономить</div>
+               <div class="blog__image-ibg"><img src="@img/blog-5.png" alt=""></div>
+            </div>
+         </div>
+         <div class="blog__bottom">
+            @@include('html/_pagging.htm',{})
+         </div>
+
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

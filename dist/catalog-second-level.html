@@ -6,13 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250707151955">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250715203345">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&_v=20250707151955" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&_v=20250715203345" rel="stylesheet">
 </head>
 
 <body>
@@ -158,7 +158,7 @@
 							<span class="header__action-link-label">Избранное</span>
 							<span class="header__action-link-count">2</span>
 						</a>
-						<a href="" class="header__action-link">
+						<a href="" class="header__action-link" data-popup="#basket">
 							<img src="img/icons/icon_basket.svg" alt="">
 							<span class="header__action-link-label">Корзина</span>
 							<span class="header__action-link-count">6</span>
@@ -913,23 +913,6 @@
 			</div>
 		</footer>
 	</div>
-	<div id="popup" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<div class="popup__header">
-					<div class="popup__title">Заголовок</div>
-					<button data-close type="button" class="popup__close">
-						<svg class="popup__close-svg">
-							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
-						</svg>
-					</button>
-				</div>
-				<div class="popup__main">
-
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="popup-box">
 		<!-- Модалка шаринга -->
 		<div id="share-popup" aria-hidden="true" class="popup popup_center">
@@ -947,7 +930,7 @@
 						<div class="share">
 							<div class="share__social">
 								<!-- uSocial -->
-								<script async src="https://usocial.pro/usocial/usocial.js?uid=21cd4b58eaf61697&v=6.1.5&_v=20250707151955" data-script="usocial" charset="utf-8"></script>
+								<script async src="https://usocial.pro/usocial/usocial.js?uid=21cd4b58eaf61697&v=6.1.5&_v=20250715203345" data-script="usocial" charset="utf-8"></script>
 								<div class="uSocial-Share" data-pid="b7450283dbc9e941ee22b283d6036804" data-type="share" data-options="round-rect,style1,default,absolute,horizontal,size48,eachCounter0,counter0,nomobile,mobile_position_right" data-social="vk,ok,telegram,wa,vi"></div>
 								<!-- /uSocial -->
 							</div>
@@ -972,7 +955,7 @@
 			<div class="popup__wrapper">
 				<div class="popup__content">
 					<div class="popup__header">
-						<div class="popup__title">Спасибо</div>
+						<div class="popup__title">Спасибо за обращение</div>
 						<button data-close type="button" class="popup__close">
 							<svg class="popup__close-svg">
 								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
@@ -980,29 +963,27 @@
 						</button>
 					</div>
 					<div class="popup__main">
-						<div class="popup__text">Мы свяжемся с вами в ближайшее время для уточнения информации</div>
-						<button data-close type="button" class="popup__close">
-							Ok
-						</button>
+						<div class="popup__text">Наш специалист скоро свяжется с вами для уточнения деталей.</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- Спасибо -->
-		<!-- Заказать звонок -->
+
+		<!-- Заказать товар -->
 		<div id="callback" aria-hidden="true" class="popup">
 			<div class="popup__wrapper">
 				<div class="popup__content">
 					<div class="popup__header">
-						<div class="popup__title">Заказ звонка</div>
+						<div class="popup__title">Заказать товар</div>
 						<button data-close type="button" class="popup__close">
-							<svg class="">
+							<svg class="popup__close-svg">
 								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
 							</svg>
 						</button>
 					</div>
 					<div class="popup__main">
-						<div class="popup__text">Оставьте контактные данные и мы вам перезвоним</div>
+						<div class="popup__text">Оставьте контактные данные и мы свяжемся с вами для уточнения деталей</div>
 						<div class="popup__form">
 							<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form">
 								<div class="form__line">
@@ -1027,8 +1008,14 @@
 									</svg>
 								</div>
 								<div class="form__footer">
-									<button type="submit" class="form__button btn btn_red">Отправить</button>
-									<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку перс. данных</a></div>
+									<button type="submit" class="form__button button-blue">Отправить</button>
+									<div class="form__check">
+										<label class="checkbox">
+											<input class="checkbox__input" type="checkbox" checked>
+											<span class="checkbox__chunk"></span>
+											<span class="checkbox__text">Отправляя данные, я даю свое <a href="" data-popup="#consent">согласие на обработку перс. данных</a></span>
+										</label>
+									</div>
 								</div>
 							</form>
 						</div>
@@ -1036,7 +1023,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- Заказать звонок -->
+		<!-- Заказать товар -->
+
 		<!-- Живой поиск -->
 		<div id="live-search" aria-hidden="true" class="popup">
 			<div class="popup__wrapper">
@@ -1056,9 +1044,539 @@
 			</div>
 		</div>
 		<!-- Живой поиск -->
+
+		<!-- Корзина -->
+		<div id="basket" aria-hidden="true" class="popup popup-basket basket-empty"> <!-- Добавить класс basket-empty когда корзина пустая -->
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Корзина</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+						<div class="basket">
+							<!-- Вставить когда корзина пустая -->
+
+							<div class="basket__center">
+								<div class="basket__empty-logo">
+									<svg class="basket__empty-icon">
+										<use xlink:href="img/icons/icons.svg#basket_empty"></use>
+									</svg>
+								</div>
+								<div class="basket__empty-text">В корзине <br>пока ничего нет</div>
+								<div class="basket__sub-text">
+									<span>Помощь в покупке</span>
+									<a href="tel:+7 (953) 585-00-39">+7 (953) 585-00-39</a>
+								</div>
+							</div>
+
+							<!-- Вставить когда корзина пустая -->
+
+							<!-- Убрать когда корзина пустая -->
+							<!-- <div class="basket__items">
+							<div class="basket-item">
+								<div class="basket-item__image-ibg"><img src="img/product-detail-1.webp" alt=""></div>
+								<a href="" class="basket-item__name">Желто-розовый букет</a>
+								<div class="basket-item__prices">
+									<div class="basket-item__price">6 666 666 ₽</div>
+									<div data-quantity class="quantity">
+										<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+										<div class="quantity__input">
+											<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+										</div>
+										<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+									</div>
+									<div class="basket-item__total-price">= 6 666 666 ₽</div>
+								</div>
+								<div class="basket-item__buttons">
+									<button type="button" class="basket-item__delete">
+										<img src="img/icons/icon_basket-del.svg" alt="">
+									</button>
+									<button type="button" class="basket-item__favorite-button">
+										<img src="img/icons/icon_favor.svg" alt="">
+										<img src="img/icons/icon_favor-active.svg" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="basket-item__image-ibg"><img src="img/product-detail-1.webp" alt=""></div>
+								<a href="" class="basket-item__name">Желто-розовый букет</a>
+								<div class="basket-item__prices">
+									<div class="basket-item__price">6 666 666 ₽</div>
+									<div data-quantity class="quantity">
+										<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+										<div class="quantity__input">
+											<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+										</div>
+										<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+									</div>
+									<div class="basket-item__total-price">= 6 666 666 ₽</div>
+								</div>
+								<div class="basket-item__buttons">
+									<button type="button" class="basket-item__delete">
+										<img src="img/icons/icon_basket-del.svg" alt="">
+									</button>
+									<button type="button" class="basket-item__favorite-button">
+										<img src="img/icons/icon_favor.svg" alt="">
+										<img src="img/icons/icon_favor-active.svg" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="basket-item__image-ibg"><img src="img/product-detail-1.webp" alt=""></div>
+								<a href="" class="basket-item__name">Желто-розовый букет</a>
+								<div class="basket-item__prices">
+									<div class="basket-item__price">6 666 666 ₽</div>
+									<div data-quantity class="quantity">
+										<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+										<div class="quantity__input">
+											<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+										</div>
+										<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+									</div>
+									<div class="basket-item__total-price">= 6 666 666 ₽</div>
+								</div>
+								<div class="basket-item__buttons">
+									<button type="button" class="basket-item__delete">
+										<img src="img/icons/icon_basket-del.svg" alt="">
+									</button>
+									<button type="button" class="basket-item__favorite-button">
+										<img src="img/icons/icon_favor.svg" alt="">
+										<img src="img/icons/icon_favor-active.svg" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="basket-item__image-ibg"><img src="img/product-detail-1.webp" alt=""></div>
+								<a href="" class="basket-item__name">Желто-розовый букет</a>
+								<div class="basket-item__prices">
+									<div class="basket-item__price">6 666 666 ₽</div>
+									<div data-quantity class="quantity">
+										<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+										<div class="quantity__input">
+											<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+										</div>
+										<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+									</div>
+									<div class="basket-item__total-price">= 6 666 666 ₽</div>
+								</div>
+								<div class="basket-item__buttons">
+									<button type="button" class="basket-item__delete">
+										<img src="img/icons/icon_basket-del.svg" alt="">
+									</button>
+									<button type="button" class="basket-item__favorite-button">
+										<img src="img/icons/icon_favor.svg" alt="">
+										<img src="img/icons/icon_favor-active.svg" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="basket-item__image-ibg"><img src="img/product-detail-1.webp" alt=""></div>
+								<a href="" class="basket-item__name">Желто-розовый букет</a>
+								<div class="basket-item__prices">
+									<div class="basket-item__price">6 666 666 ₽</div>
+									<div data-quantity class="quantity">
+										<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+										<div class="quantity__input">
+											<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+										</div>
+										<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+									</div>
+									<div class="basket-item__total-price">= 6 666 666 ₽</div>
+								</div>
+								<div class="basket-item__buttons">
+									<button type="button" class="basket-item__delete">
+										<img src="img/icons/icon_basket-del.svg" alt="">
+									</button>
+									<button type="button" class="basket-item__favorite-button">
+										<img src="img/icons/icon_favor.svg" alt="">
+										<img src="img/icons/icon_favor-active.svg" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="basket-item__image-ibg"><img src="img/product-detail-1.webp" alt=""></div>
+								<a href="" class="basket-item__name">Желто-розовый букет</a>
+								<div class="basket-item__prices">
+									<div class="basket-item__price">6 666 666 ₽</div>
+									<div data-quantity class="quantity">
+										<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+										<div class="quantity__input">
+											<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+										</div>
+										<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+									</div>
+									<div class="basket-item__total-price">= 6 666 666 ₽</div>
+								</div>
+								<div class="basket-item__buttons">
+									<button type="button" class="basket-item__delete">
+										<img src="img/icons/icon_basket-del.svg" alt="">
+									</button>
+									<button type="button" class="basket-item__favorite-button">
+										<img src="img/icons/icon_favor.svg" alt="">
+										<img src="img/icons/icon_favor-active.svg" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="basket-item__image-ibg"><img src="img/product-detail-1.webp" alt=""></div>
+								<a href="" class="basket-item__name">Желто-розовый букет</a>
+								<div class="basket-item__prices">
+									<div class="basket-item__price">6 666 666 ₽</div>
+									<div data-quantity class="quantity">
+										<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+										<div class="quantity__input">
+											<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+										</div>
+										<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+									</div>
+									<div class="basket-item__total-price">= 6 666 666 ₽</div>
+								</div>
+								<div class="basket-item__buttons">
+									<button type="button" class="basket-item__delete">
+										<img src="img/icons/icon_basket-del.svg" alt="">
+									</button>
+									<button type="button" class="basket-item__favorite-button">
+										<img src="img/icons/icon_favor.svg" alt="">
+										<img src="img/icons/icon_favor-active.svg" alt="">
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="basket__summary">
+							<div class="basket-summary">
+								<div class="basket-summary__cost">
+									<div class="basket-summary__name">Стоимость</div>
+									<div class="basket-summary__value">10 450 ₽</div>
+								</div>
+								<div class="basket-summary__cost">
+									<div class="basket-summary__name">Доставка</div>
+									<div class="basket-summary__text">Доступные способы доставки можно выбрать при формлении заказа</div>
+								</div>
+								<div class="basket-summary__cost">
+									<div class="basket-summary__name">Скидка</div>
+									<div class="basket-summary__value">-250 ₽</div>
+								</div>
+								<div class="basket-summary__total">
+									<div class="basket-summary__name">Итого</div>
+									<div class="basket-summary__value">10 200 <span>₽</span></div>
+								</div>
+								<a href="" class="basket-summary__checkout button-blue">Оформить заказ</a>
+								<div class="basket-summary__note">Минимальная стоимость заказа от 1000 рублей</div>
+							</div>
+						</div> -->
+
+							<!-- Убрать когда корзина пустая -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Корзина -->
+
+		<!-- Добавить профиль -->
+		<div id="add-profile" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Добавить профиль</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+
+						<div class="popup__form">
+							<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form">
+								<div class="form__line">
+									<label for="" class="form__label">Ваше имя</label>
+									<input id="" type="text" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">Телефон</label>
+									<input id="" type="tel" class="form__input js_phone">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">E-mail</label>
+									<input id="" type="email" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">Адрес доставки</label>
+									<input id="" type="text" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__footer">
+									<button type="submit" class="form__button button-blue">Сохранить</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Добавить профиль -->
+
+		<!-- Изменение данных -->
+		<div id="change-data" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Изменение данных</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+
+						<div class="popup__form">
+							<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form">
+								<div class="form__line">
+									<label for="" class="form__label">Ваше имя</label>
+									<input id="" type="text" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">Телефон</label>
+									<input id="" type="tel" class="form__input js_phone">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">E-mail</label>
+									<input id="" type="email" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">Адрес доставки</label>
+									<input id="" type="text" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__footer">
+									<button type="submit" class="form__button button-blue">Сохранить</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Изменение данных -->
+
+		<!-- Регистрация -->
+		<div id="registration" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Регистрация</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+
+						<div class="popup__form">
+							<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form">
+								<div class="form__line">
+									<label for="" class="form__label">Ваше имя</label>
+									<input id="" type="text" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">Телефон</label>
+									<input id="" type="tel" class="form__input js_phone">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">E-mail</label>
+									<input id="" type="email" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">Пароль</label>
+									<input id="" type="password" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">Подтверждение пароля</label>
+									<input id="" type="password" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__footer">
+									<button type="submit" class="form__button button-blue">Зарегистрироваться</button>
+									<a href="" class="form__link" data-popup="#authorization">Авторизация</a>
+									<div class="form__check">
+										<label class="checkbox">
+											<input class="checkbox__input" type="checkbox" checked>
+											<span class="checkbox__chunk"></span>
+											<span class="checkbox__text">Отправляя данные, я даю свое <a href="" data-popup="#consent">согласие на обработку перс. данных</a></span>
+										</label>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Регистрация -->
+
+		<!-- Восстановление пароля -->
+		<div id="recovery-pass" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Восстановление пароля</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+						<div class="popup__text">Укажите адрес электронной почты, с которым вы регистрировались ранее, и мы вышлем инструкцию по смене пароля</div>
+						<div class="popup__form">
+							<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form">
+
+								<div class="form__line">
+									<label for="" class="form__label">E-mail</label>
+									<input id="" type="email" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__footer">
+									<button type="submit" class="form__button button-blue">Отправить</button>
+									<a href="" class="form__link" data-popup="#authorization">Авторизация</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Восстановление пароля -->
+
+		<!-- Смена пароля -->
+		<div id="change-pass" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Смена пароля</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+
+						<div class="popup__form">
+							<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form">
+
+								<div class="form__line">
+									<label for="" class="form__label">Новый пароль</label>
+									<input id="" type="password" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__footer">
+									<button type="submit" class="form__button button-blue">Изменить</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Смена пароля -->
+
+		<!-- Авторизация -->
+		<div id="authorization" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Авторизация</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+
+						<div class="popup__form">
+							<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form">
+
+
+								<div class="form__line">
+									<label for="" class="form__label">E-mail</label>
+									<input id="" type="email" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+								<div class="form__line">
+									<label for="" class="form__label">Пароль</label>
+									<input id="" type="password" name="" class="form__input">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+
+								<div class="form__footer">
+									<button type="submit" class="form__button button-blue">Зарегистрироваться</button>
+									<a href="" class="form__link" data-popup="#recovery-pass">Забыли пароль?</a>
+									<button type="button" class="form__button button-transparent-black" data-popup="#registration">Зарегистрироваться</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Авторизация -->
 	</div>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250707151955" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="js/app.min.js?_v=20250707151955"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250715203345" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="js/app.min.js?_v=20250715203345"></script>
 </body>
 
 </html>

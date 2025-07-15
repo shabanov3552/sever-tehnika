@@ -1,0 +1,257 @@
+@@include('html/_header.htm',{
+"title":"Оформление заказа",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page-title">Оформление заказа</div>
+
+      <div class="order">
+         <form data-parsley-validate="" data-parsley-trigger="change" action="" class="order__form form">
+            <div class="order__wrapper">
+               <div class="order__sidebar">
+                  <div class="order__sidebar-inner">
+                     <div class="order__total">
+                        <div class="order__block-title">К оплате</div>
+                        <div class="order__total-row">
+                           <div class="order__total-name">Стоимость</div>
+                           <div class="order__total-value">668 248 ₽</div>
+                        </div>
+                        <div class="order__total-row">
+                           <div class="order__total-name">Скидка</div>
+                           <div class="order__total-value">-6 648 ₽</div>
+                        </div>
+                        <div class="order__total-row">
+                           <div class="order__total-name">Доставка</div>
+                           <div class="order__total-value">бесплатно</div>
+                        </div>
+                        <div class="order__total-row">
+                           <div class="order__total-name">Итого</div>
+                           <div class="order__total-value">6 668 100 ₽</div>
+                        </div>
+                     </div>
+                     <div class="order__promotion">
+                        <div class="order__promotion-top">
+                           <div class="order__promotion-line form__line">
+                              <label for="promotion" class="form__label">Промокод</label>
+                              <input id="promotion" type="text" name="text" class="form__input">
+                              <svg class="form__clear-svg">
+                                 <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                              </svg>
+                           </div>
+                           <button type="button" class="order__promo-btn button-transparent-black">Применить</button>
+                        </div>
+                        <div class="order__promotion-status">
+                           <div class="status-message status-message_failure">
+                              <div class="status-message__text">Введен неверный промокод</div>
+                           </div>
+                           <div class="status-message status-message_success">
+                              <div class="status-message__text">Промокод успешно применен</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="order__main">
+                  <div class="order__basket basket-order">
+                     <div class="order__block-title">Товары в заказе</div>
+                     <ul class="basket-order__list">
+                        <li class="basket-order__item">
+                           <div class="basket-order__image"><img src="@img/popular-categories-2.png" alt=""></div>
+                           <div class="basket-order__item-main">
+                              <a href="" class="basket-order__link">Жилет страховочный NeoprenPro 70-90</a>
+                              <div class="basket-order__subtext">
+                                 <span>Код: 4269</span> <span>Артикул: 022003</span>
+                              </div>
+                              <div class="basket-order__prices">
+                                 <div class="basket-order__price">666 666 ₽/шт.</div>
+                                 <div class="basket-order__count">× 10 шт. </div>
+                                 <div class="basket-order__total">= 6 666 666 ₽</div>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="basket-order__item">
+                           <div class="basket-order__image"><img src="@img/popular-categories-2.png" alt=""></div>
+                           <div class="basket-order__item-main">
+                              <a href="" class="basket-order__link">Жилет страховочный NeoprenPro 70-90</a>
+                              <div class="basket-order__subtext">
+                                 <span>Код: 4269</span> <span>Артикул: 022003</span>
+                              </div>
+                              <div class="basket-order__prices">
+                                 <div class="basket-order__price">666 666 ₽/шт.</div>
+                                 <div class="basket-order__count">× 10 шт. </div>
+                                 <div class="basket-order__total">= 6 666 666 ₽</div>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="order__block order__block_place">
+                     <div class="order__block-title">Местоположение</div>
+                     <div class="order__line form__line">
+                        <label for="selectLocation" class="form__label">Выберите местоположение</label>
+                        <input id="selectLocation" autocomplete="off" type="text" name="text" class="form__input">
+                        <svg class="form__clear-svg">
+                           <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                        </svg>
+                     </div>
+                  </div>
+                  <div class="order__block order__block_place">
+                     <div class="order__block-title">Индекс</div>
+                     <div class="order__line form__line">
+                        <label for="selectLocation" class="form__label">Индекс</label>
+                        <input id="selectLocation" autocomplete="off" type="text" name="text" class="form__input">
+                        <svg class="form__clear-svg">
+                           <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                        </svg>
+                     </div>
+                  </div>
+                  <div class="order__block order__block_delivery">
+                     <div class="order__block-title">Способ доставки</div>
+                     <div class="radio-buttons">
+                        <div class="radio-buttons__item">
+                           <label class="radio-buttons__label">
+                              <input class="radio-buttons__input" type="radio" value="1" name="delivery-place" checked>
+                              <div class="radio-buttons__chunk">
+                                 <div class="radio-buttons__pseudo-input"></div>
+                                 <div class="radio-buttons__inner">
+                                    <span class="radio-buttons__name">Самовывоз</span>
+                                    <span class="radio-buttons__text">Вы можете самостоятельно забрать заказ из нашего магазина.</span>
+                                 </div>
+                              </div>
+                           </label>
+                        </div>
+                        <div class="radio-buttons__item">
+                           <label class="radio-buttons__label">
+                              <input class="radio-buttons__input" type="radio" value="2" name="delivery-place">
+                              <div class="radio-buttons__chunk">
+                                 <div class="radio-buttons__pseudo-input"></div>
+                                 <div class="radio-buttons__inner">
+                                    <span class="radio-buttons__name">Доставка по Красноярску</span>
+                                    <span class="radio-buttons__text">Стоимость доставки оплаченного товара 34 000 р. При заказе от 10 000р. — доставка бесплатно. Доставка производится в течение 2-3 дней после согласования с менеджером.</span>
+                                 </div>
+                              </div>
+                           </label>
+                        </div>
+                        <div class="radio-buttons__item">
+                           <label class="radio-buttons__label">
+                              <input class="radio-buttons__input" type="radio" value="3" name="delivery-place">
+                              <div class="radio-buttons__chunk">
+                                 <div class="radio-buttons__pseudo-input"></div>
+                                 <div class="radio-buttons__inner">
+                                    <span class="radio-buttons__name">Доставка транспортной компанией</span>
+                                    <span class="radio-buttons__text">Доставка осуществляется в течение 1-3 дней.</span>
+                                 </div>
+                              </div>
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="order__block order__block_pay">
+                     <div class="order__block-title">Способ оплаты</div>
+                     <div class="radio-buttons">
+                        <div class="radio-buttons__item">
+                           <label class="radio-buttons__label">
+                              <input class="radio-buttons__input" type="radio" value="1" name="pay" checked>
+                              <div class="radio-buttons__chunk">
+                                 <div class="radio-buttons__pseudo-input"></div>
+                                 <div class="radio-buttons__inner">
+                                    <span class="radio-buttons__name">Наличный расчет</span>
+                                 </div>
+                              </div>
+                           </label>
+                        </div>
+                        <div class="radio-buttons__item">
+                           <label class="radio-buttons__label">
+                              <input class="radio-buttons__input" type="radio" value="2" name="pay">
+                              <div class="radio-buttons__chunk">
+                                 <div class="radio-buttons__pseudo-input"></div>
+                                 <div class="radio-buttons__inner">
+                                    <span class="radio-buttons__name">Безналичный расчет</span>
+                                 </div>
+                              </div>
+                           </label>
+                        </div>
+                        <div class="radio-buttons__item">
+                           <label class="radio-buttons__label">
+                              <input class="radio-buttons__input" type="radio" value="3" name="pay">
+                              <div class="radio-buttons__chunk">
+                                 <div class="radio-buttons__pseudo-input"></div>
+                                 <div class="radio-buttons__inner">
+                                    <span class="radio-buttons__name">Оплата юридическим лицом</span>
+                                 </div>
+                              </div>
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="order__block order__block_user-info">
+                     <div class="order__block-title">Информация о покупателе</div>
+                     <div class="order__row">
+                        <div class="order__col">
+                           <div class="order__line form__line">
+                              <label for="selectLocation" class="form__label">ФИО</label>
+                              <input id="selectLocation" required type="text" name="text" class="form__input" value="qwreqwr">
+                              <svg class="form__clear-svg">
+                                 <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                              </svg>
+                           </div>
+                           <div class="order__line form__line">
+                              <label for="selectLocation" class="form__label">Контактный номер</label>
+                              <input id="selectLocation" required type="tel" name="tel" class="form__input js_phone">
+                              <svg class="form__clear-svg">
+                                 <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                              </svg>
+                           </div>
+                           <div class="order__line form__line">
+                              <label for="selectLocation" class="form__label">E-mail</label>
+                              <input id="selectLocation" required type="email" name="email" class="form__input">
+                              <svg class="form__clear-svg">
+                                 <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="order__col">
+                           <div class="order__line form__line">
+                              <label for="selectLocation" class="form__label">Комментарий к заказу</label>
+                              <textarea autocomplete="off" name="form[]" placeholder="" class="form__input"></textarea>
+                              <svg class="form__clear-svg">
+                                 <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                              </svg>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="order__block order__block_addres">
+                     <div class="order__block-title">Адрес доставки</div>
+                     <div class="order__row">
+                        <div class="order__line form__line">
+                           <label for="selectLocation" class="form__label">Адрес доставки</label>
+                           <textarea name="" class="form__input" autocomplete="address"></textarea>
+                           <svg class="form__clear-svg">
+                              <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="order__block order__block_bottom">
+                     <div class="order__row">
+                        <button type="submit" class="order__button button-blue">Оформить заказ</button>
+                        <div class="form__check">
+                           <label class="checkbox">
+                              <input class="checkbox__input" type="checkbox" checked>
+                              <span class="checkbox__chunk"></span>
+                              <span class="checkbox__text">Отправляя данные, я даю свое <a href="">согласие на обработку перс. данных</a></span>
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+
+   </div>
+</main>
+@@include('html/_footer.htm',{})

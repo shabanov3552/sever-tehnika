@@ -1,0 +1,403 @@
+@@include('html/_header.htm',{
+"title":"Личный кабинет",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page-title">Личный кабинет</div>
+
+      <div class="cabinet">
+
+         <div class="account">
+            <div class="account__section account__section_info">
+               <div class="personal-info">
+                  <div class="personal-info__title">Данные аккаунта</div>
+                  <form action="" method="" class="personal-info__field">
+                     <div class="personal-info__field-chunk">
+                        <div class="personal-info__field-name">ФИО</div>
+                        <div class="personal-info__field-value">Михаил Пореченков</div>
+                        <button type="button" class="personal-info__edit-btn js-edit">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon_change"></use>
+                           </svg>
+                        </button>
+
+                        <div class="personal-info__edit">
+                           <input type="text" class="personal-info__input" placeholder="Введите ФИО">
+                           <button type="button" class="personal-info__confirm-btn">
+                              <svg>
+                                 <use xlink:href="img/icons/icons.svg#icon_enter"></use>
+                              </svg>
+                           </button>
+                        </div>
+
+                        <div class="personal-info__edit-status">
+                           <div class="status-message status-message_failure">
+                              <div class="status-message__text">Ошибка</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="personal-info__field-chunk">
+                        <div class="personal-info__field-name">E-mail</div>
+                        <div class="personal-info__field-value">MP@ya.ru</div>
+                        <button type="button" class="personal-info__edit-btn js-edit">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon_change"></use>
+                           </svg>
+                        </button>
+
+                        <div class="personal-info__edit">
+                           <input type="text" class="personal-info__input" placeholder="Введите E-mail">
+                           <button type="button" class="personal-info__confirm-btn">
+                              <svg>
+                                 <use xlink:href="img/icons/icons.svg#icon_enter"></use>
+                              </svg>
+                           </button>
+                        </div>
+
+                        <div class="personal-info__edit-status">
+                           <div class="status-message status-message_success">
+                              <div class="status-message__text">Изменения сохранены</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="personal-info__field-chunk">
+                        <div class="personal-info__field-name">Телефон</div>
+                        <div class="personal-info__field-value">не указан</div>
+                        <button type="button" class="personal-info__edit-btn js-edit">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon_change"></use>
+                           </svg>
+                        </button>
+
+                        <div class="personal-info__edit">
+                           <input type="text" class="personal-info__input" placeholder="Введите телефон">
+                           <button type="button" class="personal-info__confirm-btn">
+                              <svg>
+                                 <use xlink:href="img/icons/icons.svg#icon_enter"></use>
+                              </svg>
+                           </button>
+                        </div>
+
+                        <div class="personal-info__edit-status">
+                           <div class="status-message status-message_success">
+                              <div class="status-message__text">Изменения сохранены</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="personal-info__field-chunk">
+                        <div class="personal-info__field-name">Пароль</div>
+                        <div class="personal-info__field-value">********</div>
+                        <button type="button" class="personal-info__edit-btn js-edit">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon_change"></use>
+                           </svg>
+                        </button>
+
+                        <div class="personal-info__edit">
+                           <input type="text" class="personal-info__input" placeholder="Введите пароль">
+                           <button type="button" class="personal-info__confirm-btn">
+                              <svg>
+                                 <use xlink:href="img/icons/icons.svg#icon_enter"></use>
+                              </svg>
+                           </button>
+                        </div>
+
+                        <div class="personal-info__edit-status">
+                           <div class="status-message status-message_success">
+                              <div class="status-message__text">Изменения сохранены</div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+                  <a href="" class="personal-info__logout button-transparent-black">Выйти из аккаунта</a>
+               </div>
+            </div>
+            <div class="account__section account__section_profiles">
+               <div class="delivery-profiles">
+                  <div class="delivery-profiles__title">Профили доставки</div>
+                  <a href="" class="delivery-profiles__add-button button-transparent-black" data-popup="#add-profile">Добавить профиль</a>
+                  <div class="delivery-profiles__list">
+                     <div class="profile-item">
+                        <label class="profile-item__label">
+                           <input type="radio" name="prof" value="1" class="profile-item__input visually-hidden" checked>
+                           <div class="profile-item__radio"></div>
+                           <div class="profile-item__info">
+                              <div class="profile-item__address">Железнодорожников 13 к2, оф. 213</div>
+                              <div class="profile-item__details">
+                                 <div class="profile-item__text">Михаил Пореченков</div>
+                                 <div class="profile-item__text">8913-564-67-78</div>
+                                 <div class="profile-item__text">физическое лицо</div>
+                                 <div class="profile-item__text">mikhail@mail.ru</div>
+                              </div>
+                           </div>
+                        </label>
+                        <a href="" class="profile-item__edit-button button-grey" data-popup="#change-data">Изменить данные</a>
+                        <button type="button" class="profile-item__delete-button hover-overlay">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#del-compare"></use>
+                           </svg>
+                        </button>
+                     </div>
+                     <div class="profile-item">
+                        <label class="profile-item__label">
+                           <input type="radio" name="prof" value="2" class="profile-item__input visually-hidden">
+                           <div class="profile-item__radio"></div>
+                           <div class="profile-item__info">
+                              <div class="profile-item__address">Бабушкина 2, 66</div>
+                              <div class="profile-item__details">
+                                 <div class="profile-item__text">Соль</div>
+                                 <div class="profile-item__text">8999-111-22-33</div>
+                                 <div class="profile-item__text">юридическое лицо</div>
+                                 <div class="profile-item__text">alevtina@mail.ru</div>
+                              </div>
+                           </div>
+                        </label>
+                        <a href="" class="profile-item__edit-button button-grey" data-popup="#change-data">Изменить данные</a>
+                        <button type="button" class="profile-item__delete-button hover-overlay">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#del-compare"></use>
+                           </svg>
+                        </button>
+                     </div>
+                     <div class="profile-item">
+                        <label class="profile-item__label">
+                           <input type="radio" name="prof" value="3" class="profile-item__input visually-hidden">
+                           <div class="profile-item__radio"></div>
+                           <div class="profile-item__info">
+                              <div class="profile-item__address">Железнодорожников 13 к2, оф. 213</div>
+                              <div class="profile-item__details">
+                                 <div class="profile-item__text">Михаил Пореченков</div>
+                                 <div class="profile-item__text">8913-564-67-78</div>
+                                 <div class="profile-item__text">физическое лицо</div>
+                                 <div class="profile-item__text">mikhail@mail.ru</div>
+                              </div>
+                           </div>
+                        </label>
+                        <a href="" class="profile-item__edit-button button-grey" data-popup="#change-data">Изменить данные</a>
+                        <button type="button" class="profile-item__delete-button hover-overlay">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#del-compare"></use>
+                           </svg>
+                        </button>
+                     </div>
+                     <div class="profile-item">
+                        <label class="profile-item__label">
+                           <input type="radio" name="prof" value="4" class="profile-item__input visually-hidden">
+                           <div class="profile-item__radio"></div>
+                           <div class="profile-item__info">
+                              <div class="profile-item__address">Бабушкина 2, 66</div>
+                              <div class="profile-item__details">
+                                 <div class="profile-item__text">Соль</div>
+                                 <div class="profile-item__text">8999-111-22-33</div>
+                                 <div class="profile-item__text">юридическое лицо</div>
+                                 <div class="profile-item__text">alevtina@mail.ru</div>
+                              </div>
+                           </div>
+                        </label>
+                        <a href="" class="profile-item__edit-button button-grey" data-popup="#change-data">Изменить данные</a>
+                        <button type="button" class="profile-item__delete-button hover-overlay">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#del-compare"></use>
+                           </svg>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="order-history">
+            <div class="order-history__header">
+               <div class="order-history__title">История заказов</div>
+               <div class="order-history__sort">
+                  <select>
+                     <option value="1" selected>По возрастанию суммы заказа</option>
+                     <option value="2">По убыванию суммы заказа</option>
+                     <option value="3">По дате</option>
+                  </select>
+               </div>
+            </div>
+            <div class="order-history__main" data-spollers>
+               <div class="order-item">
+                  <div class="order-item__header">
+                     <div class="order-item__info">
+                        <div class="order-item__number">Заказ №350 </div>
+                        <div class="order-item__date">от 23.08.2024</div>
+                        <div class="order-item__price">= 5450 <span>₽</span></div>
+                     </div>
+                     <div class="order-item__status order-item__status_accepted">Принят, ожидается оплата</div>
+                     <!-- <div class="order-item__status order-item__status_paid">Оплачен, формируется к отправке</div> -->
+                     <!-- <div class="order-item__status order-item__status_completed">Выполнен</div> -->
+                     <!-- <div class="order-item__status order-item__status_cancelled">Отменен</div> -->
+                  </div>
+                  <div class="order-item__content">
+                     <div class="order-item__content-title">Состав заказа</div>
+                     <div class="order-item__items">
+                        <a href="" class="order-item__item">
+                           <div class="order-item__item-ibg"><img src="@img/product-detail-1.png" alt=""></div>
+                           <div class="order-item__item-info">
+                              <div class="order-item__item-name">Желто-розовый букет</div>
+                              <div class="order-item__item-prices">
+                                 <div class="order-item__item-price">5450 ₽</div>
+                                 <div class="order-item__item-count">1 шт.</div>
+                                 <div class="order-item__item-total">5450 ₽</div>
+                              </div>
+                           </div>
+                        </a>
+                        <a href="" class="order-item__item">
+                           <div class="order-item__item-ibg"><img src="@img/product-card-4.png" alt=""></div>
+                           <div class="order-item__item-info">
+                              <div class="order-item__item-name">Желто-розовый букет</div>
+                              <div class="order-item__item-prices">
+                                 <div class="order-item__item-price">5450 ₽</div>
+                                 <div class="order-item__item-count">1 шт.</div>
+                                 <div class="order-item__item-total">5450 ₽</div>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+
+                     <div class="order-details">
+                        <button type="button" data-spoller class="order-details__button button-grey">
+                           <span>Показать детали заказа</span>
+                           <span>Свернуть детали заказа</span>
+                        </button>
+                        <div class="order-details__body">
+                           <div class="order-details__grid">
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Заказ</div>
+                                 <div class="order-details__value">№350 </div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Время заказа</div>
+                                 <div class="order-details__value">23.08.2017 16:06</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">ФИО</div>
+                                 <div class="order-details__value">Константин Попов</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Телефон</div>
+                                 <div class="order-details__value">89029816053</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">E-mail</div>
+                                 <div class="order-details__value">2140571@bk.ru</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Адрес доставки</div>
+                                 <div class="order-details__value">г. Красноярск, ул. Мира, дом 4-11, оф. 410</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Способ оплаты</div>
+                                 <div class="order-details__value">Оплата в магазине</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Способ доставки</div>
+                                 <div class="order-details__value">Самовывоз</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Сумма заказа</div>
+                                 <div class="order-details__value">26800</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="order-item">
+                  <div class="order-item__header">
+                     <div class="order-item__info">
+                        <div class="order-item__number">Заказ №350 </div>
+                        <div class="order-item__date">от 23.08.2024</div>
+                        <div class="order-item__price">= 5450 <span>₽</span></div>
+                     </div>
+                     <!-- <div class="order-item__status order-item__status_accepted">Принят, ожидается оплата</div> -->
+                     <div class="order-item__status order-item__status_paid">Оплачен, формируется к отправке</div>
+                     <!-- <div class="order-item__status order-item__status_completed">Выполнен</div> -->
+                     <!-- <div class="order-item__status order-item__status_cancelled">Отменен</div> -->
+                  </div>
+                  <div class="order-item__content">
+                     <div class="order-item__content-title">Состав заказа</div>
+                     <div class="order-item__items">
+                        <a href="" class="order-item__item">
+                           <div class="order-item__item-ibg"><img src="@img/product-image-2.png" alt=""></div>
+                           <div class="order-item__item-info">
+                              <div class="order-item__item-name">Желто-розовый букет</div>
+                              <div class="order-item__item-prices">
+                                 <div class="order-item__item-price">5450 ₽</div>
+                                 <div class="order-item__item-count">1 шт.</div>
+                                 <div class="order-item__item-total">5450 ₽</div>
+                              </div>
+                           </div>
+                        </a>
+                        <a href="" class="order-item__item">
+                           <div class="order-item__item-ibg"><img src="@img/popular-categories-3.png" alt=""></div>
+                           <div class="order-item__item-info">
+                              <div class="order-item__item-name">Желто-розовый букет</div>
+                              <div class="order-item__item-prices">
+                                 <div class="order-item__item-price">5450 ₽</div>
+                                 <div class="order-item__item-count">1 шт.</div>
+                                 <div class="order-item__item-total">5450 ₽</div>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+
+                     <div class="order-details">
+                        <button type="button" data-spoller class="order-details__button button-grey">
+                           <span>Показать детали заказа</span>
+                           <span>Свернуть детали заказа</span>
+                        </button>
+                        <div class="order-details__body">
+                           <div class="order-details__grid">
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Заказ</div>
+                                 <div class="order-details__value">№350 </div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Время заказа</div>
+                                 <div class="order-details__value">23.08.2017 16:06</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">ФИО</div>
+                                 <div class="order-details__value">Константин Попов</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Телефон</div>
+                                 <div class="order-details__value">89029816053</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">E-mail</div>
+                                 <div class="order-details__value">2140571@bk.ru</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Адрес доставки</div>
+                                 <div class="order-details__value">г. Красноярск, ул. Мира, дом 4-11, оф. 410</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Способ оплаты</div>
+                                 <div class="order-details__value">Оплата в магазине</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Способ доставки</div>
+                                 <div class="order-details__value">Самовывоз</div>
+                              </div>
+                              <div class="order-details__row">
+                                 <div class="order-details__name">Сумма заказа</div>
+                                 <div class="order-details__value">26800</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="order-history__pagging">@@include('html/_pagging.htm',{})</div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

@@ -1,0 +1,108 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+
+.file-upload {
+   display: grid;
+   grid-template-columns: 190px 1fr;
+   gap: 45px;
+   margin-bottom: func.rem(15);
+
+   @media (max-width:bp.$sm) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+   }
+
+   // .file-upload__name
+
+   &__name {
+      font-size: 18px;
+      font-weight: 400;
+      padding-top: func.rem(15);
+   }
+
+   // .file-upload__label
+
+   &__label {}
+
+   // .file-upload__input
+
+   &__input {}
+
+   // .file-upload__pseudo-input
+
+   &__pseudo-input {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 122%;
+      color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: func.rem(12) func.rem(0);
+      cursor: pointer;
+      width: 280px;
+
+      &:hover {
+         opacity: 0.7;
+      }
+
+      img {
+         width: 16px;
+         height: 20px;
+      }
+   }
+
+   // .file-upload__preview
+
+   &__preview {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 710px;
+      gap: 15px;
+   }
+
+   // .file-upload__preview-item
+
+   &__preview-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 16px;
+      line-height: 150%;
+      font-weight: 400;
+
+      span {
+         display: -webkit-box;
+         -webkit-box-orient: vertical;
+         -webkit-line-clamp: 1;
+         overflow: hidden;
+         text-overflow: ellipsis;
+      }
+
+      &_doc {
+         flex: 1 1 100%;
+      }
+   }
+
+   // .file-upload__preview-image
+
+   &__preview-image {
+      width: 54px;
+      height: 34px;
+      border-radius: 5px;
+      overflow: hidden;
+      object-fit: cover;
+   }
+
+   // .file-upload__remove-preview
+
+   &__remove-preview {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+   }
+}
